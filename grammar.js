@@ -180,7 +180,7 @@ module.exports = grammar({
     )),
 
     embedded_scheme: $ => seq(
-      "#",
+      '#',
       $.embedded_scheme_text,
     ),
 
