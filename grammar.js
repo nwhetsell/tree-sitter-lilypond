@@ -212,7 +212,17 @@ module.exports = grammar({
 });
 
 function symbol() {
-  const alpha = /[a-zA-Z\x80-\xFF]+/
+  // The LilyPond lexer effectively uses /[a-zA-Z\x80-\xFF]+ for alphabetic
+  // characters (see
+  // https://gitlab.com/lilypond/lilypond/-/blob/3898c185a361e76ac1bf0332f50c63d0617da669/lily/lexer.ll#L169).
+  // This seems intended to match UTF-8 input, but is a bit over-inclusive (see
+  // https://en.wikipedia.org/wiki/UTF-8#Codepage_layout). Instead, for
+  // alphabetic characters match anything that’s not an ASCII control character,
+  // a space, a digit, various punctuation marks, a ZERO WIDTH NO-BREAK
+  // SPACE (U+FEFF), a WORD JOINER (U+2060), or a ZERO WIDTH SPACE (U+200B).
+  // This is from Tree-sitter’s JavaScript grammar:
+  //   https://github.com/tree-sitter/tree-sitter-javascript/blob/fdeb68ac8d2bd5a78b943528bb68ceda3aade2eb/grammar.js#L1005)
+  const alpha = /[^\x00-\x1F\s\p{Zs}0-9:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B]+/;
   return seq(alpha, repeat(seq(/[_-]/, alpha)));
 }
 
