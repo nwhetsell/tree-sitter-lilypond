@@ -21,7 +21,7 @@
     "tree-sitter-cli": "^0.20.7"
   },
   "scripts": {
-    "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; pushd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; popd; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
+    "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; cd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; cd ../../..; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
   },
   "tree-sitter": [{
     "scope": "source.lilypond",
