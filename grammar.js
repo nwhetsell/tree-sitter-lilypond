@@ -122,7 +122,7 @@ module.exports = grammar({
     // An additional single character is needed to parse, for example:
     //   \-  duration lines (https://lilypond.org/doc/Documentation/notation/graphical-notation)
     //   \^  string bends (https://lilypond.org/doc/Documentation/notation/common-notation-for-fretted-strings#index-string-bending_002c-in-tablature-notation)
-    //   \=  phrasing slur label (https://lilypond.org/doc/Documentation/notation/expressive-marks-as-curves)
+    //   \=  phrasing slur labels (https://lilypond.org/doc/Documentation/notation/expressive-marks-as-curves)
     escaped_word: $ => prec(1, token(seq('\\', choice(symbol(), /[^\x00-\x1F\s\p{Zs}0-9"\\()\[\]\uFEFF\u2060\u200B]/)))),
 
     quoted_identifier : $ => seq(
