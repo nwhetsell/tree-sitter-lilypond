@@ -396,6 +396,7 @@ comment
 
 (lilypond_program
   (embedded_scheme
+    (embedded_scheme_prefix)
     (embedded_scheme_text
       (scheme_list
         (scheme_symbol)

@@ -1,9 +1,34 @@
 {
+  "name": "tree-sitter-lilypond",
+  "main": "bindings/node",
+  "version": "0.0.0",
+  "description": "LilyPond grammar for node-tree-sitter",
+  "keywords": [
+    "lilypond",
+    "parser",
+    "lexer"
+  ],
+  "author": {
+    "name": "Nathan Whetsell",
+    "email": "nathan.whetsell@gmail.com"
+  },
+  "repository": "https://github.com/nwhetsell/tree-sitter-lilypond.git",
+  "license": "MIT",
   "dependencies": {
     "nan": "^2.17.0"
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.20.7"
   },
-  "main": "bindings/node"
+  "scripts": {
+    "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; pushd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; popd; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
+  },
+  "tree-sitter": [{
+    "scope": "source.lilypond",
+    "file-types": [
+      "ily",
+      "ly"
+    ],
+    "injection-regex": "^l(?:ilypond|y)$"
+  }]
 }

@@ -23,4 +23,4 @@ jobs:
 
     - run: npm install
 
-    - run: ./node_modules/tree-sitter-cli/tree-sitter test
+    - run: npm test

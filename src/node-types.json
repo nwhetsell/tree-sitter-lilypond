@@ -51,6 +51,10 @@
           "named": true
         },
         {
+          "type": "figured_bass_modifier",
+          "named": true
+        },
+        {
           "type": "fraction",
           "named": true
         },
@@ -79,6 +83,10 @@
           "named": true
         },
         {
+          "type": "quoted_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -103,9 +111,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "embedded_scheme_prefix",
+          "named": true
+        },
         {
           "type": "embedded_scheme_text",
           "named": true
@@ -185,6 +197,11 @@
     }
   },
   {
+    "type": "escaped_word",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "expression_block",
     "named": true,
     "fields": {},
@@ -242,6 +259,10 @@
         },
         {
           "type": "punctuation",
+          "named": true
+        },
+        {
+          "type": "quoted_identifier",
           "named": true
         },
         {
@@ -325,6 +346,10 @@
           "named": true
         },
         {
+          "type": "quoted_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -347,6 +372,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "embedded_scheme",
+          "named": true
+        },
         {
           "type": "escaped_word",
           "named": true
@@ -431,6 +460,10 @@
           "named": true
         },
         {
+          "type": "quoted_identifier",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -458,6 +491,10 @@
           "named": true
         },
         {
+          "type": "punctuation",
+          "named": true
+        },
+        {
           "type": "symbol",
           "named": true
         }
@@ -468,6 +505,21 @@
     "type": "punctuation",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "quoted_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "escaped_word",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "scheme_byte_vector",
@@ -603,6 +655,10 @@
         },
         {
           "type": "punctuation",
+          "named": true
+        },
+        {
+          "type": "quoted_identifier",
           "named": true
         },
         {
@@ -1123,10 +1179,6 @@
     "named": false
   },
   {
-    "type": "#",
-    "named": false
-  },
-  {
     "type": "#(",
     "named": false
   },
@@ -1148,6 +1200,10 @@
   },
   {
     "type": "#}",
+    "named": false
+  },
+  {
+    "type": "&",
     "named": false
   },
   {
@@ -1192,6 +1248,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {
@@ -1271,11 +1331,15 @@
     "named": true
   },
   {
+    "type": "embedded_scheme_prefix",
+    "named": true
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
   {
-    "type": "escaped_word",
+    "type": "figured_bass_modifier",
     "named": true
   },
   {
