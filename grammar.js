@@ -240,9 +240,9 @@ module.exports = grammar({
 });
 
 function symbol() {
-  // The LilyPond lexer effectively uses /[a-zA-Z\x80-\xFF]+ for alphabetic
+  // The LilyPond lexer effectively uses [a-zA-Z\x80-\xFF]+ for alphabetic
   // characters (see
-  // https://gitlab.com/lilypond/lilypond/-/blob/v2.24.1/lily/lexer.ll#L169).
+  // https://gitlab.com/lilypond/lilypond/-/blob/v2.24.3/lily/lexer.ll#L169).
   // This seems intended to match UTF-8 input, but is a bit over-inclusive (see
   // https://en.wikipedia.org/wiki/UTF-8#Codepage_layout). Instead, for
   // alphabetic characters match anything that’s not an ASCII control character,
