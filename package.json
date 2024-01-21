@@ -23,12 +23,21 @@
   "scripts": {
     "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; cd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; cd ../../..; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
   },
-  "tree-sitter": [{
-    "scope": "source.lilypond",
-    "file-types": [
-      "ily",
-      "ly"
-    ],
-    "injection-regex": "^l(?:ilypond|y)$"
-  }]
+  "tree-sitter": [
+    {
+      "scope": "source.lilypond",
+      "file-types": [
+        "ily",
+        "ly"
+      ],
+      "highlights": [
+        "queries/highlights-builtins.scm",
+        "queries/highlights.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights-builtins.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights-lilypond-builtins.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights.scm"
+      ],
+      "injection-regex": "^l(?:ilypond|y)$"
+    }
+  ]
 }
