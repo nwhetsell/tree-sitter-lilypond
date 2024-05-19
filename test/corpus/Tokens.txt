@@ -403,3 +403,47 @@ comment
         (scheme_comment)
         (scheme_comment)
         (scheme_comment)))))
+
+
+===
+Embedded Scheme and LilyPond
+===
+
+#(define foo #{
+  \relative {
+    #(make-sequential-music
+      (map (lambda (_) #{ s1 #})
+           (iota 1)))
+  }
+#})
+
+
+---
+
+(lilypond_program
+  (embedded_scheme
+    (embedded_scheme_prefix)
+    (embedded_scheme_text
+      (scheme_list
+        (scheme_symbol)
+        (scheme_symbol)
+        (scheme_embedded_lilypond
+          (escaped_word)
+          (expression_block
+            (embedded_scheme
+              (embedded_scheme_prefix)
+              (embedded_scheme_text
+                (scheme_list
+                  (scheme_symbol)
+                  (scheme_list
+                    (scheme_symbol)
+                    (scheme_list
+                      (scheme_symbol)
+                      (scheme_list
+                        (scheme_symbol))
+                      (scheme_embedded_lilypond
+                        (symbol)
+                        (unsigned_integer)))
+                    (scheme_list
+                      (scheme_symbol)
+                      (scheme_number))))))))))))

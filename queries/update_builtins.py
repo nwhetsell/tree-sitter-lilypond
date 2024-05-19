@@ -50,6 +50,7 @@ for item in ['!', '(', ')', '-', '<', '>', '[', ']', '^', '|', '~']:
 _lilypond_builtins.markup_commands.remove('markup')
 _lilypond_builtins.markup_commands.remove('markuplist')
 _lilypond_builtins.markup_commands.remove('override')
+_lilypond_builtins.markup_commands.remove('score')
 
 with open('highlights-builtins.scm', 'w') as file:
     backslash_prefix = r'^\\\\'
@@ -151,8 +152,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\language$")
+        (escaped_word) @identifier.core.function
+        (#match? @identifier.core.function "^\\\\\\\\language$")
       )
       .
       (

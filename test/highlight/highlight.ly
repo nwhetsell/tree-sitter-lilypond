@@ -74,5 +74,48 @@
     %                  ^ identifier.core.global
     %                     ^ bracket
     %                       ^ bracket
+
+    # (define bar #{
+    % <- processing
+    % ^ bracket
+    %  ^ keyword
+    %             ^ bracket
+    %              ^ bracket
+      \relative {
+      % <- identifier.core.function
+      %         ^ bracket
+        # (make-sequential-music
+        ; <- processing
+        ; ^ bracket
+        ;  ^ identifier.core.function
+          ( map (lambda (baz) #{ s1 #})
+          ; <- bracket
+          ; ^ identifier.core.function
+          ;     ^ bracket
+          ;      ^ keyword
+          ;             ^ bracket
+          ;                 ^ bracket
+          ;                   ^ bracket
+          ;                    ^ bracket
+          ;                       ^ value.number
+          ;                         ^ bracket
+          ;                          ^ bracket
+          ;                           ^ bracket
+               ( iota 1)))
+               % <- bracket
+               % ^ identifier.core.function
+               %      ^ value.number
+               %       ^ bracket
+               %        ^ bracket
+               %         ^ bracket
+
+      }
+      % <- bracket
+    #})
+    % <- bracket
+    %^ bracket
+    % ^ bracket
   }
+  % <- bracket
 }
+% <- bracket

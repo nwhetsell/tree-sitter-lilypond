@@ -1,5 +1,7 @@
 (comment) @comment
 
+(punctuation) @punctuation
+
 (
   (assignment_lhs)
   .
@@ -26,10 +28,8 @@
   ">" @bracket
   .
 )
-(chord
-  ">>" @invalid
-)
 
+(escaped_word) @identifier.variable
 (
   (escaped_word) @processing
   (#match? @processing "^\\\\(?:include|maininput|version)$") ; These are handled directly by LilyPond’s lexer.
@@ -42,7 +42,6 @@
   (escaped_word) @identifier.core.function
   (#match? @identifier.core.function "^\\\\\\^$")
 )
-(escaped_word) @identifier.variable
 
 (quoted_identifier
   "\"" @bracket
@@ -57,8 +56,6 @@
   (fraction)
   (unsigned_integer)
 ] @value.number
-
-(punctuation) @punctuation
 
 (dynamic) @identifier.core.global
 
@@ -80,5 +77,9 @@
   "<<" (parallel_music_separator) ">>"
   "#{" "#}"
 ] @bracket
+
+(chord
+  ">>" @invalid
+)
 
 (embedded_scheme_prefix) @processing

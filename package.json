@@ -1,12 +1,21 @@
 {
   "name": "tree-sitter-lilypond",
   "main": "bindings/node",
+  "types": "bindings/node",
   "version": "0.0.0",
   "description": "LilyPond grammar for node-tree-sitter",
   "keywords": [
     "lilypond",
     "parser",
     "lexer"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
   ],
   "author": {
     "name": "Nathan Whetsell",
@@ -15,12 +24,24 @@
   "repository": "https://github.com/nwhetsell/tree-sitter-lilypond.git",
   "license": "MIT",
   "dependencies": {
-    "nan": "^2.17.0"
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.7"
+    "prebuildify": "^6.0.0",
+    "tree-sitter-cli": "^0.22.6"
   },
   "scripts": {
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip",
     "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; cd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; cd ../../..; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
   },
   "tree-sitter": [
@@ -31,11 +52,11 @@
         "ly"
       ],
       "highlights": [
-        "queries/highlights-builtins.scm",
         "queries/highlights.scm",
+        "queries/highlights-builtins.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights.scm",
         "tree-sitter-lilypond-scheme/queries/highlights-builtins.scm",
-        "tree-sitter-lilypond-scheme/queries/highlights-lilypond-builtins.scm",
-        "tree-sitter-lilypond-scheme/queries/highlights.scm"
+        "tree-sitter-lilypond-scheme/queries/highlights-lilypond-builtins.scm"
       ],
       "injection-regex": "^l(?:ilypond|y)$"
     }
