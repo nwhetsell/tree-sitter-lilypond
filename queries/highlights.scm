@@ -57,6 +57,7 @@
 
 [
   (fraction)
+  (decimal_number)
   (unsigned_integer)
 ] @value.number
 

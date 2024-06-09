@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "decimal_number",
+          "named": true
+        },
+        {
           "type": "dynamic",
           "named": true
         },
@@ -218,6 +222,10 @@
           "named": true
         },
         {
+          "type": "decimal_number",
+          "named": true
+        },
+        {
           "type": "dynamic",
           "named": true
         },
@@ -299,6 +307,10 @@
         },
         {
           "type": "chord",
+          "named": true
+        },
+        {
+          "type": "decimal_number",
           "named": true
         },
         {
@@ -409,6 +421,10 @@
         },
         {
           "type": "chord",
+          "named": true
+        },
+        {
+          "type": "decimal_number",
           "named": true
         },
         {
@@ -611,6 +627,10 @@
         },
         {
           "type": "chord",
+          "named": true
+        },
+        {
+          "type": "decimal_number",
           "named": true
         },
         {
@@ -1328,6 +1348,10 @@
   },
   {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "decimal_number",
     "named": true
   },
   {

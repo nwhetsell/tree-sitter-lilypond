@@ -112,6 +112,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "decimal_number"
+        },
+        {
+          "type": "SYMBOL",
           "name": "unsigned_integer"
         },
         {
@@ -591,6 +595,26 @@
           {
             "type": "STRING",
             "value": "/"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\d+"
+          }
+        ]
+      }
+    },
+    "decimal_number": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "\\d+"
+          },
+          {
+            "type": "STRING",
+            "value": "."
           },
           {
             "type": "PATTERN",

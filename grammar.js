@@ -59,6 +59,7 @@ module.exports = grammar({
       $.symbol,
       $.property_expression,
       $.fraction,
+      $.decimal_number,
       $.unsigned_integer,
       $.punctuation,
       $.dynamic,
@@ -143,6 +144,12 @@ module.exports = grammar({
     fraction: $ => token(seq(
       unsignedInteger(),
       '/',
+      unsignedInteger()
+    )),
+
+    decimal_number: $ => token(seq(
+      unsignedInteger(),
+      '.',
       unsignedInteger()
     )),
 
