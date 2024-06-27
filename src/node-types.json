@@ -138,75 +138,7 @@
       "required": false,
       "types": [
         {
-          "type": "assignment_lhs",
-          "named": true
-        },
-        {
-          "type": "chord",
-          "named": true
-        },
-        {
-          "type": "decimal_number",
-          "named": true
-        },
-        {
-          "type": "dynamic",
-          "named": true
-        },
-        {
-          "type": "embedded_scheme",
-          "named": true
-        },
-        {
-          "type": "escaped_word",
-          "named": true
-        },
-        {
-          "type": "expression_block",
-          "named": true
-        },
-        {
-          "type": "fraction",
-          "named": true
-        },
-        {
-          "type": "instrument_string_number",
-          "named": true
-        },
-        {
-          "type": "ligature",
-          "named": true
-        },
-        {
-          "type": "named_context",
-          "named": true
-        },
-        {
-          "type": "parallel_music",
-          "named": true
-        },
-        {
-          "type": "property_expression",
-          "named": true
-        },
-        {
-          "type": "punctuation",
-          "named": true
-        },
-        {
-          "type": "quoted_identifier",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unsigned_integer",
+          "type": "scheme_embedded_lilypond",
           "named": true
         }
       ]
@@ -544,6 +476,89 @@
       "types": [
         {
           "type": "escaped_word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_embedded_lilypond",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment_lhs",
+          "named": true
+        },
+        {
+          "type": "chord",
+          "named": true
+        },
+        {
+          "type": "decimal_number",
+          "named": true
+        },
+        {
+          "type": "dynamic",
+          "named": true
+        },
+        {
+          "type": "embedded_scheme",
+          "named": true
+        },
+        {
+          "type": "escaped_word",
+          "named": true
+        },
+        {
+          "type": "expression_block",
+          "named": true
+        },
+        {
+          "type": "fraction",
+          "named": true
+        },
+        {
+          "type": "instrument_string_number",
+          "named": true
+        },
+        {
+          "type": "ligature",
+          "named": true
+        },
+        {
+          "type": "named_context",
+          "named": true
+        },
+        {
+          "type": "parallel_music",
+          "named": true
+        },
+        {
+          "type": "property_expression",
+          "named": true
+        },
+        {
+          "type": "punctuation",
+          "named": true
+        },
+        {
+          "type": "quoted_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unsigned_integer",
           "named": true
         }
       ]

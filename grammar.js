@@ -1,3 +1,34 @@
+const fs = require('fs');
+
+const rulesPath = './tree-sitter-lilypond-scheme/rules.js';
+const text = fs.readFileSync(rulesPath, 'utf8');
+let updatedText = text;
+const regexes = [
+  /\bscheme_comment\b/g,
+  /\bscheme_boolean\b/g,
+  /\bscheme_character\b/g,
+  /\bscheme_number\b/g,
+  /\bscheme_keyword\b/g,
+  /\bscheme_keyword_name\b/g,
+  /\bscheme_string\b/g,
+  /\bscheme_string_fragment\b/g,
+  /\bscheme_escape_sequence\b/g,
+  /\bscheme_symbol\b/g,
+  /\bscheme_list\b/g,
+  /\bscheme_quote\b/g,
+  /\bscheme_quasiquote\b/g,
+  /\bscheme_unquote\b/g,
+  /\bscheme_unquote_splicing\b/g,
+  /\bscheme_vector\b/g,
+  /\bscheme_byte_vector\b/g
+];
+for (const regex of regexes) {
+  updatedText = updatedText.replace(regex, '_$&');
+}
+fs.writeFileSync(rulesPath, updatedText);
+const schemeRules = require(rulesPath);
+fs.writeFileSync(rulesPath, text);
+
 module.exports = grammar({
   name: 'lilypond',
 
@@ -12,7 +43,7 @@ module.exports = grammar({
     [$.chord, $.punctuation]
   ],
 
-  rules: {
+  rules: Object.assign({
     lilypond_program: $ => repeat($._expression_component),
 
     // https://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
@@ -236,209 +267,12 @@ module.exports = grammar({
       )
     ),
 
-    _scheme_embedded_lilypond: $ => seq(
+    scheme_embedded_lilypond: $ => seq(
       '#{',
       repeat($._expression_component),
       '#}'
-    ),
-
-    _scheme_token: $ => choice(
-      $._scheme_comment,
-      $._scheme_datum
-    ),
-
-    _scheme_comment: $ => choice(
-      token(seq(choice(';', '#;'), /.*/)),
-      $._scheme_block_comment
-    ),
-
-    _scheme_block_comment: $ => seq(
-      '#|',
-      repeat(choice(
-        $._scheme_block_comment,
-        /\|[^#]/,
-        /[^|]/
-      )),
-      '|#'
-    ),
-
-    _scheme_datum: $ => choice(
-      $._scheme_simple_datum,
-      $._scheme_compound_datum
-    ),
-
-    _scheme_simple_datum: $ => choice(
-      $._scheme_boolean,
-      $._scheme_character,
-      $._scheme_number,
-      $._scheme_keyword,
-      $._scheme_string,
-      $._scheme_symbol,
-      $._scheme_embedded_lilypond
-    ),
-
-    _scheme_boolean: $ => /#(?:[tT](?:[rR][uU][eE])?|[fF](?:[aA][lL][sS][eE])?)/,
-
-    // https://www.gnu.org/software/guile/manual/html_node/Characters.html
-    _scheme_character: $ => token(seq(
-      /#\\/,
-      choice(
-        // Character names
-        seq(
-          /[aA]/,
-          choice(
-            /[cC][kK]/,
-            /[lL][aA][rR][mM]/
-          )
-        ),
-        seq(
-          /[bB]/,
-          choice(
-            /[aA][cC][kK][sS][pP][aA][cC][eE]/,
-            /[eE][lL]/,
-            /[sS]/
-          )
-        ),
-        seq(
-          /[cC]/,
-          choice(
-            /[aA][nN]/,
-            /[rR]/
-          )
-        ),
-        seq(
-          /[dD]/,
-          choice(
-            /[cC][1-4]/,
-            seq(/[eE][lL]/, optional(/[eE][tT][eE]/)),
-            /[lL][eE]/
-          )
-        ),
-        seq(
-          /[eE]/,
-          choice(
-            /[mM]/,
-            /[nN][qQ]/,
-            /[oO][tT]/,
-            seq(/[sS][cC]/, optional(/[aA][pP][eE]/)),
-            /[tT][bBxX]/
-          )
-        ),
-        /[fF][fFsS]/,
-        /[gG][sS]/,
-        /[hH][tT]/,
-        seq(
-          /[lL]/,
-          choice(
-            /[fF]/,
-            /[iI][nN][eE][fF][eE][eE][dD]/
-          )
-        ),
-        seq(
-          /[nN]/,
-          choice(
-            /[aA][kK]/,
-            /[eE][wW][lL][iI][nN][eE]/,
-            /[lL]/,
-            /[pP]/,
-            /[uU][lL][lL]?/
-          )
-        ),
-        /[pP][aA][gG][eE]/,
-        seq(
-          /[rR]/,
-          choice(
-            /[eE][tT][uU][rR][nN]/,
-            /[sS]/
-          )
-        ),
-        seq(
-          /[sS]/,
-          choice(
-            /[iI]/,
-            /[oO][hH]?/,
-            seq(/[pP]/, optional(/[aA][cC][eE]/)),
-            /[sS]/,
-            /[tT][xX]/,
-            /[uU][bB]/,
-            /[yY][nN]/
-          )
-        ),
-        /[tT][aA][bB]/,
-        /[uU][sS]/,
-        seq(/[vV][tT]/, optional(/[aA][bB]/)),
-
-        // Hexadecimal character codes
-        /[xX][0-9a-fA-F]+/,
-
-        // Octal character codes
-        /[0-7]+/,
-
-        // Single characters
-        /[^\r\n\t\f\v\p{Zs}\p{Zl}\p{Zp}]/,
-      )
-    )),
-
-    _scheme_number: $ => prec(1, token(choice(
-      numberRuleWithBase(2),
-      numberRuleWithBase(8),
-      numberRuleWithBase(10),
-      numberRuleWithBase(16)
-    ))),
-
-    // https://www.gnu.org/software/guile/manual/html_node/scheme_keywords.html
-    _scheme_keyword: $ => seq(
-      '#:',
-      $._scheme_keyword_name
-    ),
-
-    _scheme_keyword_name: $ => token.immediate(schemeSymbol()),
-
-    _scheme_string: $ => seq(
-      '"',
-      repeat(choice(
-        $._scheme_string_fragment,
-        $._scheme_escape_sequence,
-      )),
-      '"'
-    ),
-
-    _scheme_string_fragment: $ => token.immediate(prec(1, /[^"\\]+/)),
-
-    _scheme_escape_sequence: $ => token.immediate(seq(
-      '\\',
-      choice(
-        /[^x]/,
-        /x[0-9a-fA-F]+;/
-      )
-    )),
-
-    _scheme_symbol: $ => schemeSymbol(),
-
-    _scheme_compound_datum: $ => choice(
-      $._scheme_list,
-      $._scheme_quote,
-      $._scheme_quasiquote,
-      $._scheme_unquote,
-      $._scheme_unquote_splicing,
-      $._scheme_vector,
-      $._scheme_byte_vector
-    ),
-
-    _scheme_list: $ => seq('(', repeat($._scheme_token), ')'),
-
-    _scheme_quote: $ => seq("'", repeat($._scheme_comment), $._scheme_datum),
-
-    _scheme_quasiquote: $ => seq('`', repeat($._scheme_comment), $._scheme_datum),
-
-    _scheme_unquote: $ => seq(',', repeat($._scheme_comment), $._scheme_datum),
-
-    _scheme_unquote_splicing: $ => seq(',@', repeat($._scheme_comment), $._scheme_datum),
-
-    _scheme_vector: $ => seq('#(', repeat($._scheme_token), ')'),
-
-    _scheme_byte_vector: $ => seq('#vu8(', repeat($._scheme_token), ')')
-  }
+    )
+  }, schemeRules)
 });
 
 function symbol() {
@@ -458,67 +292,4 @@ function symbol() {
 
 function unsignedInteger() {
   return /\d+/;
-}
-
-function schemeSymbol() {
-  return /[^ \r\n\t\f\v\p{Zs}\p{Zl}\p{Zp}#;"'`,(){}\[\]\\]+/;
-}
-
-function numberRuleWithBase(base) {
-  // Based on
-  // https://github.com/pygments/pygments/blob/04a75bd5a75bfe27f0b582dd83c85e62f9475581/pygments/lexers/lisp.py#L74
-  // and
-  // https://github.com/6cdh/tree-sitter-scheme/blob/dd9a73d851238881a3a9426298d69742d24b7842/grammar.js#L289
-
-  let digit;
-  let radix;
-  switch (base) {
-    case 2:
-      digit = /[01]/;
-      radix = /#[bB]/;
-      break;
-    case 8:
-      digit = /[0-7]/;
-      radix = /#[oO]/;
-      break;
-    case 16:
-      digit = /[0-9a-fA-F]/;
-      radix = /#[xX]/;
-      break;
-    default:
-      base = 10;
-      digit = /[0-9]/;
-      radix = /(?:#[dD])?/;
-  }
-
-  const exactness = /(?:#[iIeE])?/;
-  const prefix = choice(
-    seq(radix, exactness),
-    seq(exactness, radix)
-  );
-
-  let ureal = seq(repeat1(digit), repeat("#"));
-  ureal = seq(ureal, optional(seq("/", ureal)));
-
-  const sign = /[+-]/;
-
-  if (base === 10) {
-    const exponent = optional(seq(/[eEsSfFdDlL]/, optional(sign), repeat1(digit)))
-    const decimal = choice(
-      seq(ureal, exponent),
-      seq(".", repeat1(digit), repeat("#"), exponent),
-      seq(repeat1(digit), ".", repeat(digit), repeat("#"), exponent),
-      seq(repeat1(digit), repeat1("#"), ".", repeat("#"), exponent)
-    );
-    ureal = choice(ureal, decimal);
-  }
-
-  const naninf = /(?:[nN][aA][nN]|[iI][nN][fF])\.0/;
-  const real = choice(seq(sign, naninf), seq(optional(sign), ureal));
-  const complex = choice(
-    seq(optional(real), sign, optional(choice(naninf, ureal)), /[iI]/),
-    seq(real, optional(seq("@", real)))
-  );
-
-  return seq(prefix, complex);
 }

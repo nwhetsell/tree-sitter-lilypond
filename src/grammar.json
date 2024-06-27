@@ -924,7 +924,7 @@
         }
       ]
     },
-    "_scheme_embedded_lilypond": {
+    "scheme_embedded_lilypond": {
       "type": "SEQ",
       "members": [
         {
@@ -1066,7 +1066,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_scheme_embedded_lilypond"
+          "name": "scheme_embedded_lilypond"
         }
       ]
     },
