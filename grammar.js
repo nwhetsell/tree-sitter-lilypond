@@ -2,6 +2,7 @@ module.exports = grammar({
   name: 'lilypond',
 
   extras: $ => [
+    $.comment,
     /[ \n\t\f\r]/
   ],
 
