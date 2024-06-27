@@ -1,4 +1,33 @@
-const schemeRules = require('./tree-sitter-lilypond-scheme/rules.js');
+const fs = require('fs');
+
+const rulesPath = './tree-sitter-lilypond-scheme/rules.js';
+const text = fs.readFileSync(rulesPath, 'utf8');
+let updatedText = text;
+const regexes = [
+  /\bscheme_comment\b/g,
+  /\bscheme_boolean\b/g,
+  /\bscheme_character\b/g,
+  /\bscheme_number\b/g,
+  /\bscheme_keyword\b/g,
+  /\bscheme_keyword_name\b/g,
+  /\bscheme_string\b/g,
+  /\bscheme_string_fragment\b/g,
+  /\bscheme_escape_sequence\b/g,
+  /\bscheme_symbol\b/g,
+  /\bscheme_list\b/g,
+  /\bscheme_quote\b/g,
+  /\bscheme_quasiquote\b/g,
+  /\bscheme_unquote\b/g,
+  /\bscheme_unquote_splicing\b/g,
+  /\bscheme_vector\b/g,
+  /\bscheme_byte_vector\b/g
+];
+for (const regex of regexes) {
+  updatedText = updatedText.replace(regex, '_$&');
+}
+fs.writeFileSync(rulesPath, updatedText);
+const schemeRules = require(rulesPath);
+fs.writeFileSync(rulesPath, text);
 
 module.exports = grammar({
   name: 'lilypond',
@@ -233,7 +262,7 @@ module.exports = grammar({
     embedded_scheme_text: $ => choice(
       $._scheme_simple_datum,
       seq(
-        repeat($.scheme_comment),
+        repeat($._scheme_comment),
         $._scheme_compound_datum
       )
     ),
