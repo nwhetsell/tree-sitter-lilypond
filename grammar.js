@@ -236,7 +236,7 @@ module.exports = grammar({
       )
     ),
 
-    scheme_embedded_lilypond: $ => seq(
+    _scheme_embedded_lilypond: $ => seq(
       '#{',
       repeat($._expression_component),
       '#}'
@@ -429,7 +429,7 @@ module.exports = grammar({
 
     _scheme_quote: $ => seq("'", repeat($._scheme_comment), $._scheme_datum),
 
-    _scheme_quasiquote: $ => seq('`', repeat($.s_cheme_comment), $._scheme_datum),
+    _scheme_quasiquote: $ => seq('`', repeat($._scheme_comment), $._scheme_datum),
 
     _scheme_unquote: $ => seq(',', repeat($._scheme_comment), $._scheme_datum),
 

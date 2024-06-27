@@ -135,66 +135,78 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "scheme_boolean",
+          "type": "assignment_lhs",
           "named": true
         },
         {
-          "type": "scheme_byte_vector",
+          "type": "chord",
           "named": true
         },
         {
-          "type": "scheme_character",
+          "type": "decimal_number",
           "named": true
         },
         {
-          "type": "scheme_comment",
+          "type": "dynamic",
           "named": true
         },
         {
-          "type": "scheme_embedded_lilypond",
+          "type": "embedded_scheme",
           "named": true
         },
         {
-          "type": "scheme_keyword",
+          "type": "escaped_word",
           "named": true
         },
         {
-          "type": "scheme_list",
+          "type": "expression_block",
           "named": true
         },
         {
-          "type": "scheme_number",
+          "type": "fraction",
           "named": true
         },
         {
-          "type": "scheme_quasiquote",
+          "type": "instrument_string_number",
           "named": true
         },
         {
-          "type": "scheme_quote",
+          "type": "ligature",
           "named": true
         },
         {
-          "type": "scheme_string",
+          "type": "named_context",
           "named": true
         },
         {
-          "type": "scheme_symbol",
+          "type": "parallel_music",
           "named": true
         },
         {
-          "type": "scheme_unquote",
+          "type": "property_expression",
           "named": true
         },
         {
-          "type": "scheme_unquote_splicing",
+          "type": "punctuation",
           "named": true
         },
         {
-          "type": "scheme_vector",
+          "type": "quoted_identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unsigned_integer",
           "named": true
         }
       ]
@@ -538,635 +550,6 @@
     }
   },
   {
-    "type": "scheme_byte_vector",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "scheme_embedded_lilypond",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment_lhs",
-          "named": true
-        },
-        {
-          "type": "chord",
-          "named": true
-        },
-        {
-          "type": "decimal_number",
-          "named": true
-        },
-        {
-          "type": "dynamic",
-          "named": true
-        },
-        {
-          "type": "embedded_scheme",
-          "named": true
-        },
-        {
-          "type": "escaped_word",
-          "named": true
-        },
-        {
-          "type": "expression_block",
-          "named": true
-        },
-        {
-          "type": "fraction",
-          "named": true
-        },
-        {
-          "type": "instrument_string_number",
-          "named": true
-        },
-        {
-          "type": "ligature",
-          "named": true
-        },
-        {
-          "type": "named_context",
-          "named": true
-        },
-        {
-          "type": "parallel_music",
-          "named": true
-        },
-        {
-          "type": "property_expression",
-          "named": true
-        },
-        {
-          "type": "punctuation",
-          "named": true
-        },
-        {
-          "type": "quoted_identifier",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unsigned_integer",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_keyword",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "scheme_keyword_name",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_number",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "scheme_quasiquote",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_quote",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_string",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_escape_sequence",
-          "named": true
-        },
-        {
-          "type": "scheme_string_fragment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_string_fragment",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "scheme_unquote",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_unquote_splicing",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "scheme_vector",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "scheme_boolean",
-          "named": true
-        },
-        {
-          "type": "scheme_byte_vector",
-          "named": true
-        },
-        {
-          "type": "scheme_character",
-          "named": true
-        },
-        {
-          "type": "scheme_comment",
-          "named": true
-        },
-        {
-          "type": "scheme_embedded_lilypond",
-          "named": true
-        },
-        {
-          "type": "scheme_keyword",
-          "named": true
-        },
-        {
-          "type": "scheme_list",
-          "named": true
-        },
-        {
-          "type": "scheme_number",
-          "named": true
-        },
-        {
-          "type": "scheme_quasiquote",
-          "named": true
-        },
-        {
-          "type": "scheme_quote",
-          "named": true
-        },
-        {
-          "type": "scheme_string",
-          "named": true
-        },
-        {
-          "type": "scheme_symbol",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote",
-          "named": true
-        },
-        {
-          "type": "scheme_unquote_splicing",
-          "named": true
-        },
-        {
-          "type": "scheme_vector",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "string",
     "named": true,
     "fields": {},
@@ -1376,26 +759,6 @@
   },
   {
     "type": "parallel_music_separator",
-    "named": true
-  },
-  {
-    "type": "scheme_boolean",
-    "named": true
-  },
-  {
-    "type": "scheme_character",
-    "named": true
-  },
-  {
-    "type": "scheme_escape_sequence",
-    "named": true
-  },
-  {
-    "type": "scheme_keyword_name",
-    "named": true
-  },
-  {
-    "type": "scheme_symbol",
     "named": true
   },
   {

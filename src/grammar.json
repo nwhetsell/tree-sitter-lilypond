@@ -913,7 +913,7 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "scheme_comment"
+                "name": "_scheme_comment"
               }
             },
             {
@@ -924,7 +924,7 @@
         }
       ]
     },
-    "scheme_embedded_lilypond": {
+    "_scheme_embedded_lilypond": {
       "type": "SEQ",
       "members": [
         {
@@ -949,7 +949,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "scheme_comment"
+          "name": "_scheme_comment"
         },
         {
           "type": "SYMBOL",
@@ -957,7 +957,7 @@
         }
       ]
     },
-    "scheme_comment": {
+    "_scheme_comment": {
       "type": "CHOICE",
       "members": [
         {
@@ -1042,39 +1042,39 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "scheme_boolean"
+          "name": "_scheme_boolean"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_character"
+          "name": "_scheme_character"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_number"
+          "name": "_scheme_number"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_keyword"
+          "name": "_scheme_keyword"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_string"
+          "name": "_scheme_string"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_symbol"
+          "name": "_scheme_symbol"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_embedded_lilypond"
+          "name": "_scheme_embedded_lilypond"
         }
       ]
     },
-    "scheme_boolean": {
+    "_scheme_boolean": {
       "type": "PATTERN",
       "value": "#(?:[tT](?:[rR][uU][eE])?|[fF](?:[aA][lL][sS][eE])?)"
     },
-    "scheme_character": {
+    "_scheme_character": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -1449,7 +1449,7 @@
         ]
       }
     },
-    "scheme_number": {
+    "_scheme_number": {
       "type": "PREC",
       "value": 1,
       "content": {
@@ -4453,7 +4453,7 @@
         }
       }
     },
-    "scheme_keyword": {
+    "_scheme_keyword": {
       "type": "SEQ",
       "members": [
         {
@@ -4462,18 +4462,18 @@
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_keyword_name"
+          "name": "_scheme_keyword_name"
         }
       ]
     },
-    "scheme_keyword_name": {
+    "_scheme_keyword_name": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
         "value": "[^ \\r\\n\\t\\f\\v\\p{Zs}\\p{Zl}\\p{Zp}#;\"'`,(){}\\[\\]\\\\]+"
       }
     },
-    "scheme_string": {
+    "_scheme_string": {
       "type": "SEQ",
       "members": [
         {
@@ -4487,11 +4487,11 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "scheme_string_fragment"
+                "name": "_scheme_string_fragment"
               },
               {
                 "type": "SYMBOL",
-                "name": "scheme_escape_sequence"
+                "name": "_scheme_escape_sequence"
               }
             ]
           }
@@ -4502,7 +4502,7 @@
         }
       ]
     },
-    "scheme_string_fragment": {
+    "_scheme_string_fragment": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PREC",
@@ -4513,7 +4513,7 @@
         }
       }
     },
-    "scheme_escape_sequence": {
+    "_scheme_escape_sequence": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "SEQ",
@@ -4538,7 +4538,7 @@
         ]
       }
     },
-    "scheme_symbol": {
+    "_scheme_symbol": {
       "type": "PATTERN",
       "value": "[^ \\r\\n\\t\\f\\v\\p{Zs}\\p{Zl}\\p{Zp}#;\"'`,(){}\\[\\]\\\\]+"
     },
@@ -4547,35 +4547,35 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "scheme_list"
+          "name": "_scheme_list"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_quote"
+          "name": "_scheme_quote"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_quasiquote"
+          "name": "_scheme_quasiquote"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_unquote"
+          "name": "_scheme_unquote"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_unquote_splicing"
+          "name": "_scheme_unquote_splicing"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_vector"
+          "name": "_scheme_vector"
         },
         {
           "type": "SYMBOL",
-          "name": "scheme_byte_vector"
+          "name": "_scheme_byte_vector"
         }
       ]
     },
-    "scheme_list": {
+    "_scheme_list": {
       "type": "SEQ",
       "members": [
         {
@@ -4595,7 +4595,7 @@
         }
       ]
     },
-    "scheme_quote": {
+    "_scheme_quote": {
       "type": "SEQ",
       "members": [
         {
@@ -4606,7 +4606,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "scheme_comment"
+            "name": "_scheme_comment"
           }
         },
         {
@@ -4615,7 +4615,7 @@
         }
       ]
     },
-    "scheme_quasiquote": {
+    "_scheme_quasiquote": {
       "type": "SEQ",
       "members": [
         {
@@ -4626,7 +4626,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "scheme_comment"
+            "name": "_scheme_comment"
           }
         },
         {
@@ -4635,7 +4635,7 @@
         }
       ]
     },
-    "scheme_unquote": {
+    "_scheme_unquote": {
       "type": "SEQ",
       "members": [
         {
@@ -4646,7 +4646,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "scheme_comment"
+            "name": "_scheme_comment"
           }
         },
         {
@@ -4655,7 +4655,7 @@
         }
       ]
     },
-    "scheme_unquote_splicing": {
+    "_scheme_unquote_splicing": {
       "type": "SEQ",
       "members": [
         {
@@ -4666,7 +4666,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "scheme_comment"
+            "name": "_scheme_comment"
           }
         },
         {
@@ -4675,7 +4675,7 @@
         }
       ]
     },
-    "scheme_vector": {
+    "_scheme_vector": {
       "type": "SEQ",
       "members": [
         {
@@ -4695,7 +4695,7 @@
         }
       ]
     },
-    "scheme_byte_vector": {
+    "_scheme_byte_vector": {
       "type": "SEQ",
       "members": [
         {
