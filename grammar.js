@@ -31,15 +31,15 @@ module.exports = grammar({
     //   https://lilypond.org/doc/Documentation/notation/available-music-functions
     // Music function syntax is ambiguous and likely impossible to represent in
     // a Tree-sitter grammar. Consider these two examples of music functions:
-    //   \grace a b
     //   \afterGrace a b
-    // The first example uses the music function \grace with *one* argument to
-    // put a grace note A before a regular note B. The second example uses the
-    // music function \afterGrace with *two* arguments to put a grace note B
-    // after a regular note A. In a Tree-sitter grammar, there is no way to
-    // express that “b” is a function argument in the second example but not the
-    // first. Even if you had grammar rules for every built-in music function,
-    // you can create additional music functions:
+    //   \grace a b
+    // The first example uses the music function \afterGrace with two arguments
+    // to put a grace note B after a regular note A. The second example uses the
+    // music function \grace with one argument to put a grace note A before a
+    // regular note B. In a Tree-sitter grammar, there is no way to express that
+    // “b” is a function argument in the first example but not the second. Even
+    // if you had grammar rules for every built-in music function, you can
+    // create additional music functions:
     //   https://lilypond.org/doc/Documentation/extending/music-function-definitions
     // It may be possible to work around this with an external scanner
     // (https://tree-sitter.github.io/tree-sitter/creating-parsers#external-scanners),
