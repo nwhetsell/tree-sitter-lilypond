@@ -34,11 +34,11 @@ module.exports = grammar({
     //   \afterGrace a b
     //   \grace a b
     // The first example uses the music function \afterGrace with two arguments
-    // to put a grace note B after a regular note A. The second example uses the
-    // music function \grace with one argument to put a grace note A before a
-    // regular note B. In a Tree-sitter grammar, there is no way to express that
-    // “b” is a function argument in the first example but not the second. Even
-    // if you had grammar rules for every built-in music function, you can
+    // to put a regular note A before a grace note B. The second example uses
+    // the music function \grace with one argument to put a grace note A before
+    // a regular note B. In a Tree-sitter grammar, there is no way to express
+    // that “b” is a function argument in the first example but not the second.
+    // Even if you had grammar rules for every built-in music function, you can
     // create additional music functions:
     //   https://lilypond.org/doc/Documentation/extending/music-function-definitions
     // It may be possible to work around this with an external scanner
@@ -249,7 +249,7 @@ module.exports = grammar({
 function symbol() {
   // The LilyPond lexer effectively uses [a-zA-Z\x80-\xFF]+ for alphabetic
   // characters (see
-  // https://gitlab.com/lilypond/lilypond/-/blob/v2.24.3/lily/lexer.ll#L169).
+  // https://gitlab.com/lilypond/lilypond/-/blob/v2.24.4/lily/lexer.ll#L169).
   // This seems intended to match UTF-8 input, but is a bit over-inclusive (see
   // https://en.wikipedia.org/wiki/UTF-8#Codepage_layout). Instead, for
   // alphabetic characters match anything that’s not an ASCII control character,
