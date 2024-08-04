@@ -73,7 +73,6 @@ with open('highlights-builtins.scm', 'w') as file:
         (_lilypond_builtins.contexts, 'identifier.core.type.context'),
         (_lilypond_builtins.translators, 'identifier.core.type.translator'),
         (_lilypond_builtins.context_properties, 'identifier.core.property.context'),
-        (_lilypond_builtins.grob_properties, 'identifier.core.property.graphical_object'),
     ]:
         file.write(dedent(f'''\
         (
@@ -84,6 +83,25 @@ with open('highlights-builtins.scm', 'w') as file:
         '''))
 
     file.write(dedent(f'''\
+    (
+      (
+        (escaped_word) @identifier.core.function
+        (#match? @identifier.core.function "^\\\\\\\\tweak$")
+      )
+      .
+      (
+        (symbol) @identifier.core.property.graphical_object
+        (#match? @identifier.core.property.graphical_object "{regex_opt(_lilypond_builtins.grob_properties, '^', '$')}")
+      )
+    )
+
+    (property_expression
+      (
+        (symbol) @identifier.core.property.graphical_object
+        (#match? @identifier.core.property.graphical_object "{regex_opt(_lilypond_builtins.grob_properties, '^', '$')}")
+      )
+    )
+
     (
       (
         (escaped_word) @escaped_word
@@ -175,6 +193,7 @@ with open('highlights-builtins.scm', 'w') as file:
               (symbol) @identifier.core.variable
               (#match? @identifier.core.variable "{regex_opt(_lilypond_builtins.paper_variables, '^', '$')}")
             )
+
             (property_expression
               (
                 (symbol) @identifier.core.variable

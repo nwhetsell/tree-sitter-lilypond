@@ -50,17 +50,18 @@
   %              ^ string.delimiter.right
   %                ^ bracket
 
-    < \breve >>> q*3/2\^
+    < \breve >>> q1*3/2\^
     % <- bracket
     % ^ value.number
     %        ^ invalid
     %          ^ bracket
     %            ^ keyword
-    %             ^ punctuation
-    %              ^ value.number
+    %             ^ value.number
+    %              ^ punctuation
     %               ^ value.number
     %                ^ value.number
-    %                 ^ identifier.core.function
+    %                 ^ value.number
+    %                  ^ identifier.core.function
 
     << { 1 \< } \\ { 2 \! } >>
     % <- bracket
@@ -115,7 +116,34 @@
     % <- bracket
     %^ bracket
     % ^ bracket
+
+    \tweak when ##f
+    % <- identifier.core.function
+    %      ^ identifier.core.property.graphical_object
+    %           ^ processing
+    %            ^ value.boolean
+
+    \override NoteHead.labels = ""
+    % <- keyword
+    %         ^ identifier.core.type.graphical_object
+    %                 ^ punctuation
+    %                  ^ identifier.core.property.graphical_object
+    %                         ^ operator
+    %                           ^ string.delimiter.left
+    %                            ^ string.delimiter.right
   }
   % <- bracket
+}
+% <- bracket
+
+\lyrics {
+% <- keyword
+%       ^ bracket
+  flag labels when used
+  % <- !
+  %    ^ !
+  %           ^ !
+  %                ^ !
+  % The assertion ! succeeds when no highlighting is applied.
 }
 % <- bracket
