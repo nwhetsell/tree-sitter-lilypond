@@ -104,8 +104,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\clef$")
+        (escaped_word) @identifier.core.function
+        (#match? @identifier.core.function "^\\\\\\\\clef$")
       )
       .
       (
@@ -116,8 +116,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\key$")
+        (escaped_word) @identifier.core.function
+        (#match? @identifier.core.function "^\\\\\\\\key$")
       )
       .
       (symbol)
@@ -130,8 +130,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\repeat$")
+        (escaped_word) @identifier.core.function
+        (#match? @identifier.core.function "^\\\\\\\\repeat$")
       )
       .
       (
@@ -142,8 +142,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\paper$")
+        (escaped_word) @keyword
+        (#match? @keyword "^\\\\\\\\paper$")
       )
       .
       (expression_block
@@ -156,8 +156,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\chordmode$")
+        (escaped_word) @keyword
+        (#match? @keyword "^\\\\\\\\chordmode$")
       )
       .
       (expression_block
@@ -182,8 +182,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\paper$")
+        (escaped_word) @keyword
+        (#match? @keyword "^\\\\\\\\paper$")
       )
       .
       (expression_block
@@ -207,8 +207,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\paper$")
+        (escaped_word) @keyword
+        (#match? @keyword "^\\\\\\\\paper$")
       )
       .
       (expression_block
@@ -221,8 +221,8 @@ with open('highlights-builtins.scm', 'w') as file:
 
     (
       (
-        (escaped_word) @escaped_word
-        (#match? @escaped_word "^\\\\\\\\header$")
+        (escaped_word) @keyword
+        (#match? @keyword "^\\\\\\\\header$")
       )
       .
       (expression_block

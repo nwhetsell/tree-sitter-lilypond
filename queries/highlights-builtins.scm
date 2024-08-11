@@ -59,8 +59,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\clef$")
+    (escaped_word) @identifier.core.function
+    (#match? @identifier.core.function "^\\\\clef$")
   )
   .
   (
@@ -71,8 +71,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\key$")
+    (escaped_word) @identifier.core.function
+    (#match? @identifier.core.function "^\\\\key$")
   )
   .
   (symbol)
@@ -85,8 +85,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\repeat$")
+    (escaped_word) @identifier.core.function
+    (#match? @identifier.core.function "^\\\\repeat$")
   )
   .
   (
@@ -97,8 +97,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\paper$")
+    (escaped_word) @keyword
+    (#match? @keyword "^\\\\paper$")
   )
   .
   (expression_block
@@ -111,8 +111,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\chordmode$")
+    (escaped_word) @keyword
+    (#match? @keyword "^\\\\chordmode$")
   )
   .
   (expression_block
@@ -137,8 +137,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\paper$")
+    (escaped_word) @keyword
+    (#match? @keyword "^\\\\paper$")
   )
   .
   (expression_block
@@ -162,8 +162,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\paper$")
+    (escaped_word) @keyword
+    (#match? @keyword "^\\\\paper$")
   )
   .
   (expression_block
@@ -176,8 +176,8 @@
 
 (
   (
-    (escaped_word) @escaped_word
-    (#match? @escaped_word "^\\\\header$")
+    (escaped_word) @keyword
+    (#match? @keyword "^\\\\header$")
   )
   .
   (expression_block

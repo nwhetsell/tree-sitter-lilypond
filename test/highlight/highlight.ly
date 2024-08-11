@@ -50,6 +50,21 @@
   %              ^ string.delimiter.right
   %                ^ bracket
 
+    \clef mezzosoprano
+    % <- identifier.core.function
+    %     ^ identifier.core.constant.clef
+
+    \key c \phrygian
+    % <- identifier.core.function
+    %      ^ identifier.core.constant.scale
+
+    \repeat unfold 1 { }
+    % <- identifier.core.function
+    %       ^ identifier.core.constant.repeat_type
+    %              ^ value.number
+    %                ^ bracket
+    %                  ^ bracket
+
     < \breve >>> q1*3/2\^
     % <- bracket
     % ^ value.number
@@ -100,7 +115,6 @@
           ;                    ^ bracket
           ;                       ^ value.number
           ;                         ^ bracket
-          ;                          ^ bracket
           ;                           ^ bracket
                ( iota 1)))
                % <- bracket
@@ -139,11 +153,22 @@
 \lyrics {
 % <- keyword
 %       ^ bracket
-  flag labels when used
+  flag labels when used systems-per-page
   % <- !
   %    ^ !
   %           ^ !
   %                ^ !
+  %                     ^ !
   % The assertion ! succeeds when no highlighting is applied.
+}
+% <- bracket
+
+\paper {
+% <- keyword
+%      ^ bracket
+  systems-per-page = 1
+  % <- identifier.core.variable
+  %                ^ operator
+  %                  ^ value.number
 }
 % <- bracket
