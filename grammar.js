@@ -159,12 +159,12 @@ module.exports = grammar({
       "'",   // raise octave
       ',',   // lower octave
       '?',   // cautionary accidental
-      '!',   // reminder accidental, figured-bass natural
+      '!',   // reminder accidental, staccatissimo, figured-bass natural
       '.',   // property access, staccato
       '*',   // multiplication
-      '-',   // place neutrally, figured-bass flat
-      '^',   // place above
-      '_',   // place below
+      '-',   // place neutrally, tenuto, figured-bass flat
+      '^',   // place above, marcato
+      '_',   // place below, portato
       '>',   // accent
       '+',   // figured-bass sharp
       '~',   // tie
