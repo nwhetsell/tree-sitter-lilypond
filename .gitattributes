@@ -1,5 +1,5 @@
 /bindings/** linguist-vendored
 /src/** linguist-vendored
-Makefile
-Package.swift
+Makefile linguist-vendored
+Package.swift linguist-vendored
 setup.py linguist-vendored
