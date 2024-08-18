@@ -1,3 +1,4 @@
 /bindings/** linguist-vendored
 /src/** linguist-vendored
+Package.swift
 setup.py linguist-vendored
