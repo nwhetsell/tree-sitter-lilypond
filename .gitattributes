@@ -1,1 +1,3 @@
+/bindings/** linguist-vendored
 /src/** linguist-vendored
+setup.py linguist-vendored
