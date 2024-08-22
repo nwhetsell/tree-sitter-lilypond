@@ -63,7 +63,7 @@ with open('highlights-builtins.scm', 'w') as file:
         file.write(dedent(f'''\
         (
           (escaped_word) @{list_and_selector[1]}
-          (#match? @{list_and_selector[1]} "{regex_opt(list_and_selector[0], backslash_prefix, '$')}")
+          (#match? @{list_and_selector[1]} "{regex_opt(list_and_selector[0], backslash_prefix, '$').replace('\\-', '-')}")
         )
 
         '''))
