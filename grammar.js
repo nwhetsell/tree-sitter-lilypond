@@ -166,7 +166,7 @@ module.exports = grammar({
       '^',   // place above, marcato
       '_',   // place below, portato
       '>',   // accent
-      '+',   // figured-bass sharp
+      '+',   // stopped, figured-bass sharp
       '~',   // tie
       '(',   // start slur
       ')',   // stop slur
