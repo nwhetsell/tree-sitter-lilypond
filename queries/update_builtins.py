@@ -4,11 +4,11 @@ import re
 from textwrap import dedent
 
 # \include and \version are actually handled by LilyPond’s lexer as a preprocessing step.
-_lilypond_builtins.keywords.remove('include')
-_lilypond_builtins.keywords.remove('version')
+for keyword in ['include', 'version']:
+    _lilypond_builtins.keywords.remove(keyword)
 # \inherit-acceptability and \language are actually music functions.
-_lilypond_builtins.keywords.remove('inherit-acceptability')
-_lilypond_builtins.keywords.remove('language')
+for keyword in ['inherit-acceptability', 'language']:
+    _lilypond_builtins.keywords.remove(keyword)
 # Add keywords that are not treated as such in Pygments.
 keywords = [
     'alternative',
@@ -40,17 +40,15 @@ for keyword in keywords:
 
 # Combine music commands, articulations, and dynamics.
 music_objects = set(_lilypond_builtins.music_commands)
-music_objects = music_objects.union(_lilypond_builtins.articulations)
-music_objects = music_objects.union(_lilypond_builtins.dynamics)
+music_objects.update(_lilypond_builtins.articulations)
+music_objects.update(_lilypond_builtins.dynamics)
 # Remove punctuation marks.
 for item in ['!', '(', ')', '-', '<', '>', '[', ']', '^', '|', '~']:
     music_objects.remove(item)
 
 # Remove keywords from markup commands.
-_lilypond_builtins.markup_commands.remove('markup')
-_lilypond_builtins.markup_commands.remove('markuplist')
-_lilypond_builtins.markup_commands.remove('override')
-_lilypond_builtins.markup_commands.remove('score')
+for keyword in ['markup', 'markuplist', 'override', 'score']:
+    _lilypond_builtins.markup_commands.remove(keyword)
 
 with open('highlights-builtins.scm', 'w') as file:
     backslash_prefix = r'^\\\\'
