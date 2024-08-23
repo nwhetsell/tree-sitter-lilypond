@@ -10,36 +10,36 @@
 
 # (define foo '())
 % <- processing
-% ^ bracket
+% ^ punctuation.bracket
 %  ^ keyword
 %             ^ operator
-%              ^ bracket
-%               ^ bracket
-%                ^ bracket
+%              ^ punctuation.bracket
+%               ^ punctuation.bracket
+%                ^ punctuation.bracket
 
 # (define-markup-command (bar layout properties input-markup) (markup?)
 ; <- processing
-; ^ bracket
+; ^ punctuation.bracket
 ;  ^ identifier.core.function
-;                        ^ bracket
-;                                                           ^ bracket
-;                                                             ^ bracket
+;                        ^ punctuation.bracket
+;                                                           ^ punctuation.bracket
+;                                                             ^ punctuation.bracket
 ;                                                              ^ identifier.core.function
-;                                                                     ^ bracket
+;                                                                     ^ punctuation.bracket
 
   ( interpret-markup layout properties #{ \markup #input-markup #}))
-  % <- bracket
+  % <- punctuation.bracket
   % ^ identifier.core.function
-  %                                    ^ bracket
+  %                                    ^ punctuation.bracket
   %                                       ^ keyword
   %                                               ^ processing
-  %                                                             ^ bracket
-  %                                                               ^ bracket
-  %                                                                ^ bracket
+  %                                                             ^ punctuation.bracket
+  %                                                               ^ punctuation.bracket
+  %                                                                ^ punctuation.bracket
 
 \score {
 % <- keyword
-%      ^ bracket
+%      ^ punctuation.bracket
 
   \new Staff="foo" {
   % <- keyword
@@ -48,7 +48,7 @@
   %          ^ string.delimiter.left
   %           ^ string
   %              ^ string.delimiter.right
-  %                ^ bracket
+  %                ^ punctuation.bracket
 
     \clef mezzosoprano
     % <- identifier.core.function
@@ -62,14 +62,14 @@
     % <- identifier.core.function
     %       ^ identifier.core.constant.repeat_type
     %              ^ value.number
-    %                ^ bracket
-    %                  ^ bracket
+    %                ^ punctuation.bracket
+    %                  ^ punctuation.bracket
 
     < \breve >>> q1*3/2\^
-    % <- bracket
+    % <- punctuation.bracket
     % ^ value.number
     %        ^ invalid
-    %          ^ bracket
+    %          ^ punctuation.bracket
     %            ^ keyword
     %             ^ value.number
     %              ^ punctuation
@@ -79,57 +79,57 @@
     %                  ^ identifier.core.function
 
     << { 1 \< } \\ { 2 \! } >>
-    % <- bracket
-    %  ^ bracket
+    % <- punctuation.bracket
+    %  ^ punctuation.bracket
     %    ^ value.number
     %      ^ identifier.core.global
-    %         ^ bracket
-    %           ^ bracket
-    %              ^ bracket
+    %         ^ punctuation.bracket
+    %           ^ punctuation.bracket
+    %              ^ punctuation.bracket
     %                ^ value.number
     %                  ^ identifier.core.global
-    %                     ^ bracket
-    %                       ^ bracket
+    %                     ^ punctuation.bracket
+    %                       ^ punctuation.bracket
 
     # (define bar #{
     % <- processing
-    % ^ bracket
+    % ^ punctuation.bracket
     %  ^ keyword
-    %             ^ bracket
-    %              ^ bracket
+    %             ^ punctuation.bracket
+    %              ^ punctuation.bracket
       \relative {
       % <- identifier.core.function
-      %         ^ bracket
+      %         ^ punctuation.bracket
         # (make-sequential-music
         ; <- processing
-        ; ^ bracket
+        ; ^ punctuation.bracket
         ;  ^ identifier.core.function
           ( map (lambda (baz) #{ s1 #})
-          ; <- bracket
+          ; <- punctuation.bracket
           ; ^ identifier.core.function
-          ;     ^ bracket
+          ;     ^ punctuation.bracket
           ;      ^ keyword
-          ;             ^ bracket
-          ;                 ^ bracket
-          ;                   ^ bracket
-          ;                    ^ bracket
+          ;             ^ punctuation.bracket
+          ;                 ^ punctuation.bracket
+          ;                   ^ punctuation.bracket
+          ;                    ^ punctuation.bracket
           ;                       ^ value.number
-          ;                         ^ bracket
-          ;                           ^ bracket
+          ;                         ^ punctuation.bracket
+          ;                           ^ punctuation.bracket
                ( iota 1)))
-               % <- bracket
+               % <- punctuation.bracket
                % ^ identifier.core.function
                %      ^ value.number
-               %       ^ bracket
-               %        ^ bracket
-               %         ^ bracket
+               %       ^ punctuation.bracket
+               %        ^ punctuation.bracket
+               %         ^ punctuation.bracket
 
       }
-      % <- bracket
+      % <- punctuation.bracket
     #})
-    % <- bracket
-    %^ bracket
-    % ^ bracket
+    % <- punctuation.bracket
+    %^ punctuation.bracket
+    % ^ punctuation.bracket
 
     \tweak when ##f
     % <- identifier.core.function
@@ -146,13 +146,13 @@
     %                           ^ string.delimiter.left
     %                            ^ string.delimiter.right
   }
-  % <- bracket
+  % <- punctuation.bracket
 }
-% <- bracket
+% <- punctuation.bracket
 
 \lyrics {
 % <- keyword
-%       ^ bracket
+%       ^ punctuation.bracket
   flag labels when used systems-per-page
   % <- !
   %    ^ !
@@ -161,14 +161,14 @@
   %                     ^ !
   % The assertion ! succeeds when no highlighting is applied.
 }
-% <- bracket
+% <- punctuation.bracket
 
 \paper {
 % <- keyword
-%      ^ bracket
+%      ^ punctuation.bracket
   systems-per-page = 1
   % <- identifier.core.variable
   %                ^ operator
   %                  ^ value.number
 }
-% <- bracket
+% <- punctuation.bracket

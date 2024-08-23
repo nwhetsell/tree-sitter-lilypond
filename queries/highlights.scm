@@ -80,7 +80,7 @@
   "{" "}"
   "<<" (parallel_music_separator) ">>"
   "#{" "#}"
-] @bracket
+] @punctuation.bracket
 
 (chord
   ">>" @invalid
