@@ -3,8 +3,8 @@ package tree_sitter_lilypond_test
 import (
 	"testing"
 
-	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-lilypond"
+	tree_sitter "github.com/tree-sitter/go-tree-sitter"
+	tree_sitter_lilypond "github.com/tree-sitter/tree-sitter-lilypond/bindings/go"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
