@@ -24,8 +24,8 @@
 
 (chord
   .
-  "<" @bracket
-  ">" @bracket
+  "<" @punctuation.bracket
+  ">" @punctuation.bracket
   .
 )
 
