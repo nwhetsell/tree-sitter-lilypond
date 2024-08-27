@@ -26,7 +26,7 @@ jobs:
     - run: ./node_modules/tree-sitter-cli/tree-sitter test
 
     - name: Parse LilyPond regression test files
-    - run: |
+      run: |
         git clone https://gitlab.com/lilypond/lilypond.git
         cd lilypond/input/regression
         rm bom-mark.ly other/display-lily-tests.ly
