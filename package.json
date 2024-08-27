@@ -43,7 +43,7 @@
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "test": "./node_modules/tree-sitter-cli/tree-sitter test; git clone https://gitlab.com/lilypond/lilypond.git; cd lilypond/input/regression; rm bom-mark.ly other/display-lily-tests.ly; cd ../../..; ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'; rm -fR lilypond"
+    "test": "node --test bindings/node/*_test.js"
   },
   "tree-sitter": [
     {
