@@ -1,0 +1,45 @@
+{
+  "grammars": [
+    {
+      "name": "lilypond",
+      "camelcase": "LilyPond",
+      "scope": "source.lilypond",
+      "path": ".",
+      "file-types": [
+        "ily",
+        "ly"
+      ],
+      "highlights": [
+        "queries/highlights.scm",
+        "queries/highlights-builtins.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights-builtins.scm",
+        "tree-sitter-lilypond-scheme/queries/highlights-lilypond-builtins.scm"
+      ],
+      "injection-regex": "^l(?:ilypond|y)$"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.0",
+    "license": "MIT",
+    "description": "LilyPond grammar for Tree-sitter",
+    "authors": [
+      {
+        "name": "Nathan Whetsell",
+        "email": "nathan.whetsell@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/nwhetsell/tree-sitter-lilypond.git",
+      "homepage": "https://github.com/nwhetsell/tree-sitter-lilypond"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

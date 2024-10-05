@@ -296,6 +296,7 @@
   {
     "type": "lilypond_program",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,

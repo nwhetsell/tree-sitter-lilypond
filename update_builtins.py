@@ -50,7 +50,7 @@ for item in ['!', '(', ')', '-', '<', '>', '[', ']', '^', '|', '~']:
 for keyword in ['markup', 'markuplist', 'override', 'score']:
     _lilypond_builtins.markup_commands.remove(keyword)
 
-with open('highlights-builtins.scm', 'w') as file:
+with open('queries/highlights-builtins.scm', 'w') as file:
     backslash_prefix = r'^\\\\'
     for list_and_selector in [
         (_lilypond_builtins.keywords, 'keyword'),
