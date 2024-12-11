@@ -180,8 +180,7 @@ module.exports = grammar({
       '|',   // bar check
 
       // Prevent other punctuation from producing parsing errors.
-      '&',
-      ';'
+      '&', ';', '@'
     ),
 
     dynamic: $ => choice(
