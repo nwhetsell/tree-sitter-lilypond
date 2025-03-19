@@ -117,7 +117,7 @@ module.exports = grammar({
         alias(choice('\\+', '\\\\', prec(1, '\\!')), $.figured_bass_modifier),
         $._expression_component
       )),
-      '>'
+      prec(1, '>')
     ),
 
     // An additional single character is needed to parse, for example:

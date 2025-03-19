@@ -240,7 +240,7 @@ c\< c\! c\> c\!
 Chords
 ===
 
-<c e-> g\1>2q
+<c e-> g\1>2q <>->
 
 ---
 
@@ -253,7 +253,10 @@ Chords
     (symbol)
     (instrument_string_number))
   (unsigned_integer)
-  (symbol))
+  (symbol)
+  (chord)
+  (punctuation)
+  (punctuation))
 
 
 ===
