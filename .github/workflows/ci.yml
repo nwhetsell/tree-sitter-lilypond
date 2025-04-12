@@ -27,9 +27,9 @@ jobs:
 
     - name: Parse LilyPond regression test files
       run: |
-        git clone https://gitlab.com/lilypond/lilypond.git
-        cd lilypond/input/regression
+        git clone https://gitlab.com/lilypond/lilypond.git lilypond-source
+        cd lilypond-source/input/regression
         rm bom-mark.ly other/display-lily-tests.ly
         cd ../../..
-        ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond/**/*.ly'
+        ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond-source/**/*.ly'
       if: ${{ matrix.os != 'windows-latest' }}
