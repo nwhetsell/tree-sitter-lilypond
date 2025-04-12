@@ -24,6 +24,8 @@
       "scope": "source.lilypond_scheme",
       "path": "lilypond-scheme",
       "highlights": [
+        "queries/highlights.scm",
+        "queries/highlights-builtins.scm",
         "queries/highlights-scheme.scm",
         "queries/highlights-scheme-builtins.scm",
         "queries/highlights-scheme-lilypond-builtins.scm"
