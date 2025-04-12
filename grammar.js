@@ -1,4 +1,4 @@
-const schemeRules = require('./tree-sitter-lilypond-scheme/rules.js');
+const SchemeRules = require('./tree-sitter-lilypond-scheme/rules.js');
 
 module.exports = grammar({
   name: 'lilypond',
@@ -242,7 +242,7 @@ module.exports = grammar({
       repeat($._expression_component),
       '#}'
     )
-  }, schemeRules)
+  }, SchemeRules)
 });
 
 function symbol() {
