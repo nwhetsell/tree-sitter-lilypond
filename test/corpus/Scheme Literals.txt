@@ -211,6 +211,7 @@ Embedded LilyPond
   #{
     % comment
     bar = #(define-event-function (more-music)(ly:music?)
+      ; #}
       #{ \tweak something ##t $more-music #})
     \tweak something-else "baz" $music
   #}))
@@ -219,18 +220,15 @@ Embedded LilyPond
 
 (scheme_program
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text
-      (scheme_embedded_lilypond_text_fragment)))
+    (escaped_word))
   (scheme_embedded_lilypond)
   (scheme_embedded_lilypond)
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text
-      (lilypond_comment)))
+    (comment))
   (scheme_embedded_lilypond
-    (scheme_embedded_lilypond_text
-      (lilypond_string
-        (lilypond_string_fragment)
-        (lilypond_escape_sequence))))
+    (string
+      (string_fragment)
+      (escape_sequence)))
   (scheme_list
     (scheme_symbol)
     (scheme_symbol)
@@ -241,16 +239,39 @@ Embedded LilyPond
       (scheme_list
         (scheme_symbol))
       (scheme_embedded_lilypond
-        (scheme_embedded_lilypond_text
-          (lilypond_comment)
-          (scheme_embedded_lilypond_text_fragment)
-          (scheme_embedded_lilypond
-            (scheme_embedded_lilypond_text
-              (scheme_embedded_lilypond_text_fragment)))
-          (scheme_embedded_lilypond_text_fragment)
-          (lilypond_string
-            (lilypond_string_fragment))
-          (scheme_embedded_lilypond_text_fragment))))))
+        (comment)
+            (assignment_lhs
+              (symbol))
+            (punctuation)
+            (embedded_scheme
+              (embedded_scheme_prefix)
+              (embedded_scheme_text
+                (scheme_list
+                  (scheme_symbol)
+                  (scheme_list
+                    (scheme_symbol))
+                  (scheme_list
+                    (scheme_symbol))
+                  (scheme_comment)
+                  (scheme_embedded_lilypond
+                    (escaped_word)
+                    (symbol)
+                    (embedded_scheme
+                      (embedded_scheme_prefix)
+                      (embedded_scheme_text
+                        (scheme_boolean)))
+                    (embedded_scheme
+                      (embedded_scheme_prefix)
+                      (embedded_scheme_text
+                        (scheme_symbol)))))))
+            (escaped_word)
+            (symbol)
+            (string
+              (string_fragment))
+            (embedded_scheme
+              (embedded_scheme_prefix)
+              (embedded_scheme_text
+                (scheme_symbol)))))))
 
 
 ===

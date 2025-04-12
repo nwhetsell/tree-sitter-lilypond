@@ -933,26 +933,6 @@
         }
       ]
     },
-    "scheme_embedded_lilypond": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "#{"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_expression_component"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "#}"
-        }
-      ]
-    },
     "_scheme_token": {
       "type": "CHOICE",
       "members": [
@@ -4721,6 +4701,26 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "scheme_embedded_lilypond": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression_component"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "#}"
         }
       ]
     }
