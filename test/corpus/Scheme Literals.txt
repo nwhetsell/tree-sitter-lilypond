@@ -240,38 +240,38 @@ Embedded LilyPond
         (scheme_symbol))
       (scheme_embedded_lilypond
         (comment)
-          (assignment_lhs
-            (symbol))
-          (punctuation)
-          (embedded_scheme
-            (embedded_scheme_prefix)
-            (embedded_scheme_text
+        (assignment_lhs
+          (symbol))
+        (punctuation)
+        (embedded_scheme
+          (embedded_scheme_prefix)
+          (embedded_scheme_text
+            (scheme_list
+              (scheme_symbol)
               (scheme_list
-                (scheme_symbol)
-                (scheme_list
-                  (scheme_symbol))
-                (scheme_list
-                  (scheme_symbol))
-                (scheme_comment)
-                (scheme_embedded_lilypond
-                  (escaped_word)
-                  (symbol)
-                  (embedded_scheme
-                    (embedded_scheme_prefix)
-                    (embedded_scheme_text
-                      (scheme_boolean)))
-                  (embedded_scheme
-                    (embedded_scheme_prefix)
-                    (embedded_scheme_text
-                      (scheme_symbol)))))))
-          (escaped_word)
-          (symbol)
-          (string
-            (string_fragment))
-          (embedded_scheme
-            (embedded_scheme_prefix)
-            (embedded_scheme_text
-              (scheme_symbol)))))))
+                (scheme_symbol))
+              (scheme_list
+                (scheme_symbol))
+              (scheme_comment)
+              (scheme_embedded_lilypond
+                (escaped_word)
+                (symbol)
+                (embedded_scheme
+                  (embedded_scheme_prefix)
+                  (embedded_scheme_text
+                    (scheme_boolean)))
+                (embedded_scheme
+                  (embedded_scheme_prefix)
+                  (embedded_scheme_text
+                    (scheme_symbol)))))))
+        (escaped_word)
+        (symbol)
+        (string
+          (string_fragment))
+        (embedded_scheme
+          (embedded_scheme_prefix)
+          (embedded_scheme_text
+            (scheme_symbol)))))))
 
 
 ===
