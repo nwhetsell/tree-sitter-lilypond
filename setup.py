@@ -35,7 +35,8 @@ setup(
             name="_binding",
             sources=[
                 "bindings/python/tree_sitter_lilypond/binding.c",
-                "src/parser.c"
+                "lilypond/src/parser.c",
+                "lilypond-scheme/src/parser.c"
             ],
             extra_compile_args=[
                 "-std=c11",
@@ -47,7 +48,7 @@ setup(
                 ("Py_LIMITED_API", "0x03080000"),
                 ("PY_SSIZE_T_CLEAN", None)
             ],
-            include_dirs=["src"],
+            include_dirs=["lilypond/src"],
             py_limited_api=True,
         )
     ],

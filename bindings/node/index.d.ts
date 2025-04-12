@@ -24,5 +24,6 @@ type Language = {
   nodeTypeInfo: NodeInfo[];
 };
 
-declare const language: Language;
-export = language;
+declare const lilypond: Language;
+declare const lilypond_scheme: Language;
+export = {lilypond, lilypond_scheme};

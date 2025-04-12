@@ -4,7 +4,7 @@
       "name": "lilypond",
       "camelcase": "LilyPond",
       "scope": "source.lilypond",
-      "path": ".",
+      "path": "lilypond",
       "file-types": [
         "ily",
         "ly"
@@ -12,11 +12,22 @@
       "highlights": [
         "queries/highlights.scm",
         "queries/highlights-builtins.scm",
-        "tree-sitter-lilypond-scheme/queries/highlights.scm",
-        "tree-sitter-lilypond-scheme/queries/highlights-builtins.scm",
-        "tree-sitter-lilypond-scheme/queries/highlights-lilypond-builtins.scm"
+        "queries/highlights-scheme.scm",
+        "queries/highlights-scheme-builtins.scm",
+        "queries/highlights-scheme-lilypond-builtins.scm"
       ],
       "injection-regex": "^l(?:ilypond|y)$"
+    },
+    {
+      "name": "lilypond-scheme",
+      "camelcase": "LilyPondScheme",
+      "scope": "source.lilypond_scheme",
+      "path": "lilypond-scheme",
+      "highlights": [
+        "queries/highlights-scheme.scm",
+        "queries/highlights-scheme-builtins.scm",
+        "queries/highlights-scheme-lilypond-builtins.scm"
+      ]
     }
   ],
   "metadata": {

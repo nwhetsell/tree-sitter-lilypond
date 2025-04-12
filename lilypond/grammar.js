@@ -1,4 +1,4 @@
-const SchemeRules = require('./tree-sitter-lilypond-scheme/rules.js');
+const SchemeRules = require('../lilypond-scheme/rules.js');
 
 module.exports = grammar({
   name: 'lilypond',

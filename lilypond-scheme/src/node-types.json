@@ -1,0 +1,775 @@
+[
+  {
+    "type": "lilypond_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "lilypond_escape_sequence",
+          "named": true
+        },
+        {
+          "type": "lilypond_string_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lilypond_string_fragment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "scheme_byte_vector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "scheme_embedded_lilypond",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_embedded_lilypond_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_embedded_lilypond_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lilypond_comment",
+          "named": true
+        },
+        {
+          "type": "lilypond_string",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond_text_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_embedded_lilypond_text_fragment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "scheme_keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_keyword_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "scheme_program",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_quasiquote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_quote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_escape_sequence",
+          "named": true
+        },
+        {
+          "type": "scheme_string_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_string_fragment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "scheme_unquote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_unquote_splicing",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_vector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scheme_boolean",
+          "named": true
+        },
+        {
+          "type": "scheme_byte_vector",
+          "named": true
+        },
+        {
+          "type": "scheme_character",
+          "named": true
+        },
+        {
+          "type": "scheme_comment",
+          "named": true
+        },
+        {
+          "type": "scheme_embedded_lilypond",
+          "named": true
+        },
+        {
+          "type": "scheme_keyword",
+          "named": true
+        },
+        {
+          "type": "scheme_list",
+          "named": true
+        },
+        {
+          "type": "scheme_number",
+          "named": true
+        },
+        {
+          "type": "scheme_quasiquote",
+          "named": true
+        },
+        {
+          "type": "scheme_quote",
+          "named": true
+        },
+        {
+          "type": "scheme_string",
+          "named": true
+        },
+        {
+          "type": "scheme_symbol",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote",
+          "named": true
+        },
+        {
+          "type": "scheme_unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "scheme_vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#(",
+    "named": false
+  },
+  {
+    "type": "#:",
+    "named": false
+  },
+  {
+    "type": "#vu8(",
+    "named": false
+  },
+  {
+    "type": "#{",
+    "named": false
+  },
+  {
+    "type": "#|",
+    "named": false
+  },
+  {
+    "type": "#}",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": ",@",
+    "named": false
+  },
+  {
+    "type": "`",
+    "named": false
+  },
+  {
+    "type": "lilypond_comment",
+    "named": true
+  },
+  {
+    "type": "lilypond_escape_sequence",
+    "named": true
+  },
+  {
+    "type": "scheme_boolean",
+    "named": true
+  },
+  {
+    "type": "scheme_character",
+    "named": true
+  },
+  {
+    "type": "scheme_escape_sequence",
+    "named": true
+  },
+  {
+    "type": "scheme_keyword_name",
+    "named": true
+  },
+  {
+    "type": "scheme_symbol",
+    "named": true
+  },
+  {
+    "type": "|#",
+    "named": false
+  }
+]

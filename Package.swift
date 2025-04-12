@@ -2,45 +2,40 @@
 import PackageDescription
 
 let package = Package(
-    name: "TreeSitterLilypond",
+    name: "TreeSitterLilyPond",
     products: [
-        .library(name: "TreeSitterLilypond", targets: ["TreeSitterLilypond"]),
+        .library(name: "TreeSitterLilyPond", targets: ["TreeSitterLilyPond", "TreeSitterLilyPondScheme"]),
     ],
     dependencies: [],
     targets: [
-        .target(name: "TreeSitterLilypond",
+        .target(name: "TreeSitterLilyPond",
                 path: ".",
-                exclude: [
-                    "Cargo.toml",
-                    "Makefile",
-                    "binding.gyp",
-                    "bindings/c",
-                    "bindings/go",
-                    "bindings/node",
-                    "bindings/python",
-                    "bindings/rust",
-                    "prebuilds",
-                    "grammar.js",
-                    "package.json",
-                    "package-lock.json",
-                    "pyproject.toml",
-                    "setup.py",
-                    "test",
-                    "examples",
-                    ".editorconfig",
-                    ".github",
-                    ".gitignore",
-                    ".gitattributes",
-                    ".gitmodules",
-                ],
                 sources: [
-                    "src/parser.c"
+                    "lilypond/src/parser.c"
                 ],
                 resources: [
                     .copy("queries")
                 ],
-                publicHeadersPath: "bindings/swift",
-                cSettings: [.headerSearchPath("src")])
+                publicHeadersPath: "bindings/swift/lilypond",
+                cSettings: [.headerSearchPath("lilypond/src")]),
+        .target(name: "TreeSitterLilyPondScheme",
+                path: ".",
+                sources: [
+                    "lilypond-scheme/src/parser.c"
+                ],
+                resources: [
+                    .copy("queries")
+                ],
+                publicHeadersPath: "bindings/swift/lilypond-scheme",
+                cSettings: [.headerSearchPath("lilypond-scheme/src")]),
+        .testTarget(name: "TreeSitterLilyPondTests",
+                path: ".",
+                dependencies: [
+                    "SwiftTreeSitter",
+                    "TreeSitterLilyPond",
+                    "TreeSitterLilyPondScheme",
+                ],
+                path: "bindings/swift/TreeSitterLilyPondTests"
     ],
     cLanguageStandard: .c11
 )

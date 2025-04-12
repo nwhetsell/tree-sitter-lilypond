@@ -3,9 +3,10 @@
   "main": "bindings/node",
   "types": "bindings/node",
   "version": "0.0.0",
-  "description": "LilyPond grammar for node-tree-sitter",
+  "description": "LilyPond and LilyPond Scheme grammars for tree-sitter",
   "keywords": [
     "lilypond",
+    "scheme",
     "parser",
     "lexer"
   ],
@@ -15,7 +16,10 @@
     "prebuilds/**",
     "bindings/node/*",
     "queries/*",
-    "src/**"
+    "lilypond/grammar.js",
+    "lilypond-scheme/grammar.js",
+    "lilypond/src/**",
+    "lilypond-scheme/src/**"
   ],
   "author": {
     "name": "Nathan Whetsell",

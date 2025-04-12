@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-lilypond"
-description = "LilyPond grammar for the tree-sitter parsing library"
+description = "LilyPond and LilyPond Scheme grammars for Tree-sitter"
 version = "0.0.1"
 authors = ["Nathan Whetsell <nathan.whetsell@gmail.com>"]
 keywords = ["incremental", "parsing", "lilypond"]
@@ -12,9 +12,11 @@ license = "MIT"
 build = "bindings/rust/build.rs"
 include = [
   "bindings/rust/*",
-  "grammar.js",
+  "lilypond/grammar.js",
+  "lilypond/src",
+  "lilypond_scheme/grammar.js",
+  "lilypond_scheme/src",
   "queries/*",
-  "src/*",
 ]
 
 [lib]

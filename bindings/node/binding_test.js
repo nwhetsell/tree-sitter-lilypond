@@ -3,7 +3,14 @@
 const assert = require("node:assert");
 const { test } = require("node:test");
 
-test("can load grammar", () => {
-  const parser = new (require("tree-sitter"))();
-  assert.doesNotThrow(() => parser.setLanguage(require(".")));
+const Parser = require('tree-sitter');
+
+test("can load LilyPond grammar", () => {
+  const parser = new Parser();
+  assert.doesNotThrow(() => parser.setLanguage(require("./lilypond")));
+});
+
+test("can load LilyPond Scheme grammar", () => {
+  const parser = new Parser();
+  assert.doesNotThrow(() => parser.setLanguage(require("./lilypond-scheme")));
 });

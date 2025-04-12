@@ -3,6 +3,7 @@
 typedef struct TSLanguage TSLanguage;
 
 extern "C" TSLanguage *tree_sitter_lilypond();
+extern "C" TSLanguage *tree_sitter_lilypond_scheme();
 
 // "tree-sitter", "language" hashed with BLAKE2
 const napi_type_tag LANGUAGE_TYPE_TAG = {
@@ -10,10 +11,20 @@ const napi_type_tag LANGUAGE_TYPE_TAG = {
 };
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports["name"] = Napi::String::New(env, "lilypond");
-    auto language = Napi::External<TSLanguage>::New(env, tree_sitter_lilypond());
-    language.TypeTag(&LANGUAGE_TYPE_TAG);
-    exports["language"] = language;
+    auto lilypond = Napi::Object::New(env);
+    lilypond["name"] = Napi::String::New(env, "lilypond");
+    auto lilypond_language = Napi::External<TSLanguage>::New(env, tree_sitter_lilypond());
+    lilypond_language.TypeTag(&LANGUAGE_TYPE_TAG);
+    lilypond["language"] = lilypond_language;
+
+    auto lilypond_scheme = Napi::Object::New(env);
+    lilypond_scheme["name"] = Napi::String::New(env, "lilypond_scheme");
+    auto lilypond_scheme_language = Napi::External<TSLanguage>::New(env, tree_sitter_lilypond_scheme());
+    lilypond_scheme_language.TypeTag(&LANGUAGE_TYPE_TAG);
+    lilypond_scheme["language"] = lilypond_scheme_language;
+
+    exports["lilypond"] = lilypond;
+    exports["lilypond_scheme"] = lilypond_scheme;
     return exports;
 }
 

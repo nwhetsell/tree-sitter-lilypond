@@ -6,11 +6,12 @@
         "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
       ],
       "include_dirs": [
-        "src",
+        "lilypond/src",
       ],
       "sources": [
-        "bindings/node/binding.cc",
-        "src/parser.c"
+        "lilypond/src/parser.c",
+        "lilypond-scheme/src/parser.c",
+        "bindings/node/binding.cc"
       ],
       "conditions": [
         ["OS!='win'", {
