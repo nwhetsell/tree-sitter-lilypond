@@ -1,5 +1,7 @@
 /bindings/** linguist-generated
-/src/** linguist-generated
-Makefile linguist-generated
+/lilypond/src/** linguist-generated
+/lilypond-scheme/src/** linguist-generated
+lilypond/Makefile linguist-generated
+lilypond-scheme/Makefile linguist-generated
 Package.swift linguist-generated
 setup.py linguist-generated
