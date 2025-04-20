@@ -139,7 +139,7 @@ module.exports = {
     )
   )),
 
-  scheme_number: $ => prec(1, token(choice(
+  scheme_number: $ => token(prec(1, choice(
     numberRuleWithBase(2),
     numberRuleWithBase(8),
     numberRuleWithBase(10),
@@ -173,7 +173,7 @@ module.exports = {
     )
   )),
 
-  scheme_symbol: $ => symbol(),
+  scheme_symbol: $ => token(prec(1, symbol())),
 
   _scheme_compound_datum: $ => choice(
     $.scheme_list,

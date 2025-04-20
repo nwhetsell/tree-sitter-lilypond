@@ -417,7 +417,7 @@ Embedded Scheme and LilyPond
 #(define foo #{
   \relative {
     #(make-sequential-music
-      (map (lambda (_) #{ s1 #})
+      (map (lambda (%) #{ s1 #})
            (iota 1)))
   }
 #})

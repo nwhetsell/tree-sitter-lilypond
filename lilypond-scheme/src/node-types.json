@@ -704,11 +704,6 @@
     }
   },
   {
-    "type": "scheme_number",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "scheme_program",
     "named": true,
     "root": true,
@@ -1389,6 +1384,10 @@
   },
   {
     "type": "scheme_keyword_name",
+    "named": true
+  },
+  {
+    "type": "scheme_number",
     "named": true
   },
   {

@@ -104,18 +104,19 @@
         ; <- processing
         ; ^ punctuation.bracket
         ;  ^ identifier.core.function
-          ( map (lambda (baz) #{ s1 #})
+          ( map (lambda (%baz) #{ s1 #})
           ; <- punctuation.bracket
           ; ^ identifier.core.function
           ;     ^ punctuation.bracket
           ;      ^ keyword
           ;             ^ punctuation.bracket
-          ;                 ^ punctuation.bracket
-          ;                   ^ punctuation.bracket
+          ;              ^ !
+          ;                  ^ punctuation.bracket
           ;                    ^ punctuation.bracket
-          ;                       ^ value.number
-          ;                         ^ punctuation.bracket
-          ;                           ^ punctuation.bracket
+          ;                     ^ punctuation.bracket
+          ;                        ^ value.number
+          ;                          ^ punctuation.bracket
+          ;                            ^ punctuation.bracket
                ( iota 1)))
                % <- punctuation.bracket
                % ^ identifier.core.function

@@ -515,10 +515,10 @@
       }
     },
     "scheme_number": {
-      "type": "PREC",
-      "value": 1,
+      "type": "TOKEN",
       "content": {
-        "type": "TOKEN",
+        "type": "PREC",
+        "value": 1,
         "content": {
           "type": "CHOICE",
           "members": [
@@ -3604,8 +3604,15 @@
       }
     },
     "scheme_symbol": {
-      "type": "PATTERN",
-      "value": "[^ \\r\\n\\t\\f\\v\\p{Zs}\\p{Zl}\\p{Zp}#;\"'`,(){}\\[\\]\\\\]+"
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^ \\r\\n\\t\\f\\v\\p{Zs}\\p{Zl}\\p{Zp}#;\"'`,(){}\\[\\]\\\\]+"
+        }
+      }
     },
     "_scheme_compound_datum": {
       "type": "CHOICE",
