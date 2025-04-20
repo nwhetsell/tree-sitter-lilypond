@@ -18,13 +18,6 @@ module.exports = grammar({
   rules: Object.assign(
     { lilypond_program: $ => repeat($._expression_component) },
     LilyPondRules,
-    SchemeRules,
-    {
-      scheme_embedded_lilypond: $ => seq(
-        '#{',
-        repeat($._expression_component),
-        '#}'
-      )
-    }
+    SchemeRules
   )
 });

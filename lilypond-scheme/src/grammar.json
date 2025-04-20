@@ -3787,6 +3787,26 @@
         }
       ]
     },
+    "scheme_embedded_lilypond": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression_component"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "#}"
+        }
+      ]
+    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -4710,41 +4730,16 @@
           ]
         }
       ]
-    },
-    "scheme_embedded_lilypond": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "#{"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_expression_component"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "#}"
-        }
-      ]
     }
   },
   "extras": [
     {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "[ \\n\\t\\f\\r]"
     }
   ],
   "conflicts": [
