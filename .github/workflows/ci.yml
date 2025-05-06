@@ -8,28 +8,27 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [22.x, 20.x]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
-      with:
-        submodules: recursive
 
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: Set up Tree-sitter
+      uses: tree-sitter/setup-action@v1
 
-    - run: npm install
+    - name: Run tests
+      uses: tree-sitter/parser-test-action@v2
 
-    - run: ./node_modules/tree-sitter-cli/tree-sitter test
+    - name: Clone LilyPond regression test files
+      run: git clone https://gitlab.com/lilypond/lilypond.git lilypond-source --single-branch --depth=1 --filter=blob:none
+      if: ${{ matrix.os != 'windows-latest' }}
 
     - name: Parse LilyPond regression test files
-      run: |
-        git clone https://gitlab.com/lilypond/lilypond.git lilypond-source
-        cd lilypond-source/input/regression
-        rm bom-mark.ly other/display-lily-tests.ly
-        cd ../../..
-        ./node_modules/tree-sitter-cli/tree-sitter parse --quiet 'lilypond-source/**/*.ly'
+      uses: tree-sitter/parse-action@v4
+      id: lilypond
+      with:
+        files: |
+          lilypond-source/**/*.ly
+          !lilypond-source/input/regression/bom-mark.ts
+          !lilypond-source/input/regression/other/display-lily-tests.ly
       if: ${{ matrix.os != 'windows-latest' }}
