@@ -20,5 +20,5 @@ fn main() {
         println!("cargo:rerun-if-changed={}", path.to_str().unwrap());
     }
 
-    config.compile("tree-sitter-lilypond");
+    c_config.compile("tree-sitter-lilypond");
 }
