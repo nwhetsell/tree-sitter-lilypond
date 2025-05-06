@@ -29,6 +29,6 @@ jobs:
       with:
         files: |
           lilypond-source/**/*.ly
-          !lilypond-source/input/regression/bom-mark.ts
+          !lilypond-source/input/regression/bom-mark.ly
           !lilypond-source/input/regression/other/display-lily-tests.ly
       if: ${{ matrix.os != 'windows-latest' }}
