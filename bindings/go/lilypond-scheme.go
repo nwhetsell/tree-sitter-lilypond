@@ -1,4 +1,4 @@
-package tree_sitter_lilypond_scheme
+package tree_sitter_lilypond
 
 // #cgo CFLAGS: -std=c11 -fPIC
 // #include "../../src/parser.c"
