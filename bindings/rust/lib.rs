@@ -52,7 +52,7 @@ mod tests {
     fn test_can_load_lilypond_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(&super::LANGUAGE.into())
+            .set_language(&super::LANGUAGE_LILYPOND.into())
             .expect("Error loading LilyPond parser");
     }
 
@@ -60,7 +60,7 @@ mod tests {
     fn test_can_load_lilypond_scheme_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(&super::LANGUAGE.into())
+            .set_language(&super::LANGUAGE_LILYPOND_SCHEME.into())
             .expect("Error loading LilyPond Scheme parser");
     }
 }
