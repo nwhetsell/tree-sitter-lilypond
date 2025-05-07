@@ -1,7 +1,7 @@
 package tree_sitter_lilypond
 
 // #cgo CFLAGS: -std=c11 -fPIC
-// #include "../../src/parser.c"
+// #include "../../lilypond-scheme/src/parser.c"
 import "C"
 
 import "unsafe"
