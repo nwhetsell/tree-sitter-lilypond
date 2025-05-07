@@ -7,6 +7,6 @@ import "C"
 import "unsafe"
 
 // Get the tree-sitter Language for LilyPond Scheme.
-func Language() unsafe.Pointer {
+func LanguageLilyPondScheme() unsafe.Pointer {
 	return unsafe.Pointer(C.tree_sitter_lilypond_scheme())
 }
