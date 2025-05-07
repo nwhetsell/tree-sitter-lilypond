@@ -1,0 +1,16 @@
+name: Create release
+
+on:
+  push:
+    tags: ["*"]
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  github:
+    uses: tree-sitter/workflows/.github/workflows/release.yml@main
+    with:
+      attestations: true
