@@ -7,7 +7,7 @@
 //! let code = r#"
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
-//! let language = tree_sitter_lilypond::LANGUAGE;
+//! let language = tree_sitter_lilypond::LANGUAGE_LILYPOND;
 //! parser
 //!     .set_language(&language.into())
 //!     .expect("Error loading LilyPond parser");
