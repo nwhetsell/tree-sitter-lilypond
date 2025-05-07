@@ -24,23 +24,24 @@ use tree_sitter_language::LanguageFn;
 
 extern "C" {
     fn tree_sitter_lilypond() -> *const ();
+    fn tree_sitter_lilypond_scheme() -> *const ();
 }
 
 /// The tree-sitter [`LanguageFn`] for LilyPond.
-pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_lilypond) };
+pub const LANGUAGE_LILYPOND: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_lilypond) };
 
 /// The tree-sitter [`LanguageFn`] for LilyPond Scheme.
-pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_lilypond_scheme) };
+pub const LANGUAGE_LILYPOND_SCHEME: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_lilypond_scheme) };
 
 /// The content of the [`node-types.json`][] file for LilyPond.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
-pub const NODE_TYPES: &str = include_str!("../../lilypond/src/node-types.json");
+pub const LILYPOND_NODE_TYPES: &str = include_str!("../../lilypond/src/node-types.json");
 
 /// The content of the [`node-types.json`][] file for LilyPond Scheme.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
-pub const NODE_TYPES: &str = include_str!("../../lilypond_scheme/src/node-types.json");
+pub const LILYPOND_SCHEM_NODE_TYPES: &str = include_str!("../../lilypond-scheme/src/node-types.json");
 
 pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
 pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");

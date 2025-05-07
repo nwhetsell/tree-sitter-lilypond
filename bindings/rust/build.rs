@@ -1,7 +1,7 @@
 fn main() {
     let root_dir = std::path::Path::new(".");
     let lilypond_dir = root_dir.join("lilypond").join("src");
-    let lilypond_scheme_dir = root_dir.join("lilypond_scheme").join("src");
+    let lilypond_scheme_dir = root_dir.join("lilypond-scheme").join("src");
 
     let mut c_config = cc::Build::new();
     c_config.include(&lilypond_dir);
