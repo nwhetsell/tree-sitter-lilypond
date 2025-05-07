@@ -11,19 +11,20 @@ license = "MIT"
 
 build = "bindings/rust/build.rs"
 include = [
-  "bindings/rust/*",
+  "bindings/rust",
   "lilypond/grammar.js",
   "lilypond/src",
   "lilypond_scheme/grammar.js",
   "lilypond_scheme/src",
   "queries/*",
+  "./tree-sitter.json",
 ]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter-language = "0.1.0"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
 cc = "1.0"

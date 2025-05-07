@@ -1,5 +1,5 @@
 fn main() {
-    let root_dir = std::path::Path::new("../..");
+    let root_dir = std::path::Path::new(".");
     let lilypond_dir = root_dir.join("lilypond").join("src");
     let lilypond_scheme_dir = root_dir.join("lilypond_scheme").join("src");
 
