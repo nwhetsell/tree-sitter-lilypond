@@ -23,7 +23,7 @@ jobs:
         test-node: true
         test-python: true
         test-go: true
-        test-swift: true
+        test-swift: false # due to https://github.com/swift-actions/setup-swift/issues/694
 
     - name: Clone LilyPond regression test files
       run: git clone https://gitlab.com/lilypond/lilypond.git lilypond-source --single-branch --depth=1 --filter=blob:none
