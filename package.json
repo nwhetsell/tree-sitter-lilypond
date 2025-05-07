@@ -2,7 +2,7 @@
   "name": "tree-sitter-lilypond",
   "main": "bindings/node",
   "types": "bindings/node",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "LilyPond and LilyPond Scheme grammars for tree-sitter",
   "keywords": [
     "lilypond",
