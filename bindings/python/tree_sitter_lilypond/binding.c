@@ -5,8 +5,12 @@ typedef struct TSLanguage TSLanguage;
 TSLanguage *tree_sitter_lilypond(void);
 TSLanguage *tree_sitter_lilypond_scheme(void);
 
-static PyObject* _binding_language(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+static PyObject* _binding_language_lilypond(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
     return PyCapsule_New(tree_sitter_lilypond(), "tree_sitter.Language", NULL);
+}
+
+static PyObject* _binding_language_lilypond_scheme(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+    return PyCapsule_New(tree_sitter_lilypond_scheme(), "tree_sitter.Language", NULL);
 }
 
 static PyMethodDef methods[] = {

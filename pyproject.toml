@@ -9,13 +9,12 @@ version = "0.0.1"
 keywords = ["incremental", "parsing", "tree-sitter", "lilypond"]
 classifiers = [
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
   "Topic :: Software Development :: Compilers",
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed"
 ]
 requires-python = ">=3.8"
-license.text = "MIT"
+license = "MIT"
 readme = "README.md"
 
 [project.urls]
