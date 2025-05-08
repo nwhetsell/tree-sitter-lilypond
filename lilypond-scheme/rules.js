@@ -201,8 +201,29 @@ module.exports = {
 
   scheme_embedded_lilypond: $ => seq(
     '#{',
-    repeat($._expression_component),
+    optional($.scheme_embedded_lilypond_text),
     '#}'
+  ),
+
+  // This rule is a bit of a hack. We use `choice` here to avoid matching the
+  // empty string (which is forbidden by Tree-sitter). $.comment refers to
+  // LilyPond comments that start with “%”. These are `extras` of this Scheme
+  // grammar, so matching them would seem unnecessary, but if embedded LilyPond
+  // begins with a LilyPond comment, the LilyPond comment will not be included
+  // within an scheme_embedded_lilypond_text node unless it’s expliclty matched
+  // here (because the comment will be treated as an extra of the Scheme
+  // grammar). More flexible `extras` seems to be a longstanding issue
+  // (https://github.com/tree-sitter/tree-sitter/issues/931), and it appears on
+  // the roadmap for Tree-sitter 0.26 (https://github.com/tree-sitter/tree-sitter/milestone/8),
+  // so it may be possible to remove this hack with a future version of
+  // Tree-sitter.
+  scheme_embedded_lilypond_text: $ => choice(
+    repeat1($.comment),
+
+    seq(
+      repeat($.comment),
+      repeat1($._expression_component)
+    )
   )
 };
 

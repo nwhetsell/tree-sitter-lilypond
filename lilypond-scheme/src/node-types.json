@@ -535,8 +535,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
+      "types": [
+        {
+          "type": "scheme_embedded_lilypond_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scheme_embedded_lilypond_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "assignment_lhs",
@@ -544,6 +559,10 @@
         },
         {
           "type": "chord",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         },
         {

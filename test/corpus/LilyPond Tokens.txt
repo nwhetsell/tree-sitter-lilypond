@@ -433,22 +433,24 @@ Embedded Scheme and LilyPond
         (scheme_symbol)
         (scheme_symbol)
         (scheme_embedded_lilypond
-          (escaped_word)
-          (expression_block
-            (embedded_scheme
-              (embedded_scheme_prefix)
-              (embedded_scheme_text
-                (scheme_list
-                  (scheme_symbol)
+          (scheme_embedded_lilypond_text
+            (escaped_word)
+            (expression_block
+              (embedded_scheme
+                (embedded_scheme_prefix)
+                (embedded_scheme_text
                   (scheme_list
                     (scheme_symbol)
                     (scheme_list
                       (scheme_symbol)
                       (scheme_list
-                        (scheme_symbol))
-                      (scheme_embedded_lilypond
-                        (symbol)
-                        (unsigned_integer)))
-                    (scheme_list
-                      (scheme_symbol)
-                      (scheme_number))))))))))))
+                        (scheme_symbol)
+                        (scheme_list
+                          (scheme_symbol))
+                        (scheme_embedded_lilypond
+                          (scheme_embedded_lilypond_text
+                            (symbol)
+                            (unsigned_integer))))
+                      (scheme_list
+                        (scheme_symbol)
+                        (scheme_number)))))))))))))
