@@ -1,0 +1,7 @@
+nwhetsell/zed-tree-sitter-lilypond:
+  - source: lilypond/src/
+    dest: src/
+
+nwhetsell/zed-tree-sitter-lilypond-scheme:
+  - source: lilypond-scheme/src/
+    dest: src/
