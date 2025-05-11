@@ -1,13 +1,13 @@
 * text=auto eol=lf
 
 # Generated source files
-typescript/src/*.json linguist-generated
-typescript/src/parser.c linguist-generated
-typescript/src/tree_sitter/* linguist-generated
+lilypond/src/*.json linguist-generated
+lilypond/src/parser.c linguist-generated
+lilypond/src/tree_sitter/* linguist-generated
 
-tsx/src/*.json linguist-generated
-tsx/src/parser.c linguist-generated
-tsx/src/tree_sitter/* linguist-generated
+lilypond-scheme/src/*.json linguist-generated
+lilypond-scheme/src/parser.c linguist-generated
+lilypond-scheme/src/tree_sitter/* linguist-generated
 
 # C bindings
 bindings/c/* linguist-generated
