@@ -1,4 +1,4 @@
-name: Sync Files
+name: Sync files
 
 on:
   workflow_dispatch:
