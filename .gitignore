@@ -6,6 +6,9 @@ build/
 prebuilds/
 node_modules/
 
+# Swift artifacts
+.build/
+
 # C artifacts
 *.a
 *.so
