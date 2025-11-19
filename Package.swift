@@ -42,7 +42,7 @@ let package = Package(
                 "TreeSitterLilyPond",
                 "TreeSitterLilyPondScheme",
             ],
-            path: "bindings/swift/TreeSitterLilyPondTests")
+            path: "bindings/swift/TreeSitterLilypondTests")
     ],
     cLanguageStandard: .c11
 )
