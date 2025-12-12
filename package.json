@@ -1,14 +1,23 @@
 {
   "name": "tree-sitter-lilypond",
-  "main": "bindings/node",
-  "types": "bindings/node",
   "version": "0.0.1",
   "description": "LilyPond and LilyPond Scheme grammars for tree-sitter",
+  "repository":  {
+    "type": "git",
+    "url": "https://github.com/nwhetsell/tree-sitter-lilypond.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Nathan Whetsell",
+    "email": "nathan.whetsell@gmail.com"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
   "keywords": [
     "lilypond",
+    "parsing",
     "scheme",
-    "parser",
-    "lexer"
+    "tree-sitter"
   ],
   "files": [
     "grammar.js",
@@ -21,27 +30,21 @@
     "lilypond/src/**",
     "lilypond-scheme/src/**"
   ],
-  "author": {
-    "name": "Nathan Whetsell",
-    "email": "nathan.whetsell@gmail.com"
-  },
-  "repository": "https://github.com/nwhetsell/tree-sitter-lilypond.git",
-  "license": "MIT",
   "dependencies": {
     "node-addon-api": "^8.5.0",
-    "node-gyp-build": "^4.8.0"
+    "node-gyp-build": "^4.8.4"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter": "^0.25.0"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.22.4"
+    "tree-sitter": "^0.25.0"
   },
   "peerDependenciesMeta": {
     "tree_sitter": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "prebuildify": "^6.0.0",
-    "tree-sitter-cli": "^0.25.10"
   },
   "scripts": {
     "install": "node-gyp-build",

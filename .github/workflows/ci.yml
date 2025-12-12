@@ -15,13 +15,15 @@ jobs:
 
     - name: Set up Tree-sitter
       uses: tree-sitter/setup-action@v2
+      with:
+        install-lib: false
 
     - name: Run tests
       uses: tree-sitter/parser-test-action@v3
       with:
         generate: false
         test-rust: true
-        test-node: true
+        test-node: false # due to https://github.com/tree-sitter/node-tree-sitter/issues/238
         test-python: true
         test-go: true
         go-version: "1.23"
