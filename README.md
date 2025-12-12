@@ -6,5 +6,5 @@ The LilyPond Scheme grammar is based on https://github.com/6cdh/tree-sitter-sche
 To rebuild the grammars:
 
 ```sh
-for folder in lilypond lilypond-scheme; do ./node_modules/tree-sitter-cli/tree-sitter generate $folder/grammar.js --abi 14 && rm -fR $folder/src && mv src $folder/; done
+for folder in lilypond lilypond-scheme; do tree-sitter generate $folder/grammar.js --abi 14 && rm -fR $folder/src && mv src $folder/; done
 ```
