@@ -50,8 +50,8 @@
 )
 
 (
-  (escaped_word) @identifier.core.function
-  (#any-of? @identifier.core.function
+  (escaped_word) @function.builtin
+  (#any-of? @function.builtin
     "\\="
     "\\absolute"
     "\\acciaccatura"
@@ -224,8 +224,8 @@
 )
 
 (
-  (escaped_word) @identifier.core.global
-  (#any-of? @identifier.core.global
+  (escaped_word) @variable.builtin
+  (#any-of? @variable.builtin
     "\\accent"
     "\\aikenHeads"
     "\\aikenHeadsMinor"
@@ -519,8 +519,8 @@
 )
 
 (
-  (escaped_word) @identifier.core.function.markup
-  (#any-of? @identifier.core.function.markup
+  (escaped_word) @function.builtin.markup
+  (#any-of? @function.builtin.markup
     "\\abs-fontsize"
     "\\accidental"
     "\\align-on-other"
@@ -708,8 +708,8 @@
 )
 
 (
-  (symbol) @identifier.core.type.graphical_object
-  (#any-of? @identifier.core.type.graphical_object
+  (symbol) @type.builtin.graphical_object
+  (#any-of? @type.builtin.graphical_object
     "Accidental"
     "AccidentalCautionary"
     "AccidentalPlacement"
@@ -877,8 +877,8 @@
 )
 
 (
-  (symbol) @identifier.core.type.context
-  (#any-of? @identifier.core.type.context
+  (symbol) @type.builtin.context
+  (#any-of? @type.builtin.context
     "ChoirStaff"
     "ChordGrid"
     "ChordGridScore"
@@ -925,8 +925,8 @@
 )
 
 (
-  (symbol) @identifier.core.type.translator
-  (#any-of? @identifier.core.type.translator
+  (symbol) @type.builtin.translator
+  (#any-of? @type.builtin.translator
     "Accidental_engraver"
     "Alteration_glyph_engraver"
     "Ambitus_engraver"
@@ -1091,8 +1091,8 @@
 )
 
 (
-  (symbol) @identifier.core.property.context
-  (#any-of? @identifier.core.property.context
+  (symbol) @property.context
+  (#any-of? @property.context
     "aDueText"
     "accidentalGrouping"
     "additionalBassStrings"
@@ -1359,13 +1359,13 @@
 
 (
   (
-    (escaped_word) @identifier.core.function
-    (#eq? @identifier.core.function "\\tweak")
+    (escaped_word) @function.builtin
+    (#eq? @function.builtin "\\tweak")
   )
   .
   (
-    (symbol) @identifier.core.property.graphical_object
-    (#any-of? @identifier.core.property.graphical_object
+    (symbol) @property.graphical_object
+    (#any-of? @property.graphical_object
       "X-align-on-main-noteheads"
       "X-attachment"
       "X-common"
@@ -1819,8 +1819,8 @@
 
 (property_expression
   (
-    (symbol) @identifier.core.property.graphical_object
-    (#any-of? @identifier.core.property.graphical_object
+    (symbol) @property.graphical_object
+    (#any-of? @property.graphical_object
       "X-align-on-main-noteheads"
       "X-attachment"
       "X-common"
@@ -2274,13 +2274,13 @@
 
 (
   (
-    (escaped_word) @identifier.core.function
-    (#eq? @identifier.core.function "\\clef")
+    (escaped_word) @function.builtin
+    (#eq? @function.builtin "\\clef")
   )
   .
   (
-    (symbol) @identifier.core.constant.clef
-    (#any-of? @identifier.core.constant.clef
+    (symbol) @constant.builtin.clef
+    (#any-of? @constant.builtin.clef
       "C"
       "F"
       "G"
@@ -2318,15 +2318,15 @@
 
 (
   (
-    (escaped_word) @identifier.core.function
-    (#eq? @identifier.core.function "\\key")
+    (escaped_word) @function.builtin
+    (#eq? @function.builtin "\\key")
   )
   .
   (symbol)
   .
   (
-    (escaped_word) @identifier.core.constant.scale
-    (#any-of? @identifier.core.constant.scale
+    (escaped_word) @constant.builtin.scale
+    (#any-of? @constant.builtin.scale
       "\\aeolian"
       "\\dorian"
       "\\ionian"
@@ -2342,13 +2342,13 @@
 
 (
   (
-    (escaped_word) @identifier.core.function
-    (#eq? @identifier.core.function "\\repeat")
+    (escaped_word) @function.builtin
+    (#eq? @function.builtin "\\repeat")
   )
   .
   (
-    (symbol) @identifier.core.constant.repeat_type
-    (#any-of? @identifier.core.constant.repeat_type
+    (symbol) @constant.builtin.repeat_type
+    (#any-of? @constant.builtin.repeat_type
       "percent"
       "segno"
       "tremolo"
@@ -2366,8 +2366,8 @@
   .
   (expression_block
     (
-      (escaped_word) @identifier.core.constant.unit
-      (#any-of? @identifier.core.constant.unit
+      (escaped_word) @constant.builtin.unit
+      (#any-of? @constant.builtin.unit
         "\\cm"
         "\\in"
         "\\mm"
@@ -2399,13 +2399,13 @@
 
 (
   (
-    (escaped_word) @identifier.core.function
-    (#eq? @identifier.core.function "\\language")
+  (escaped_word) @function.builtin
+    (#eq? @function.builtin "\\language")
   )
   .
   (
-    (symbol) @identifier.core.constant.language
-    (#any-of? @identifier.core.constant.language
+    (symbol) @constant.builtin.language
+    (#any-of? @constant.builtin.language
       "arabic"
       "catalan"
       "català"
@@ -2436,8 +2436,8 @@
     (assignment_lhs
       [
         (
-          (symbol) @identifier.core.variable
-          (#any-of? @identifier.core.variable
+          (symbol) @variable.builtin
+          (#any-of? @variable.builtin
             "auto-first-page-number"
             "basic-distance"
             "binding-offset"
@@ -2497,8 +2497,8 @@
 
         (property_expression
           (
-            (symbol) @identifier.core.variable
-            (#any-of? @identifier.core.variable
+            (symbol) @variable.builtin
+            (#any-of? @variable.builtin
               "auto-first-page-number"
               "basic-distance"
               "binding-offset"
@@ -2569,8 +2569,8 @@
   .
   (expression_block
     (
-      (escaped_word) @identifier.core.variable
-      (#any-of? @identifier.core.variable
+      (escaped_word) @variable.builtin
+      (#any-of? @variable.builtin
         "\\auto-first-page-number"
         "\\basic-distance"
         "\\binding-offset"
@@ -2638,8 +2638,8 @@
   .
   (expression_block
     (assignment_lhs
-      (symbol) @identifier.core.variable
-      (#any-of? @identifier.core.variable
+      (symbol) @constant.builtin
+      (#any-of? @constant.builtin
         "arranger"
         "composer"
         "copyright"

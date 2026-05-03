@@ -53,9 +53,9 @@ for keyword in ["markup", "markuplist", "override", "score"]:
 with open("queries/highlights-builtins.scm", "w") as file:
     for list_and_selector in [
         (_lilypond_builtins.keywords, "keyword"),
-        (_lilypond_builtins.music_functions, "identifier.core.function"),
-        (music_objects, "identifier.core.global"),
-        (_lilypond_builtins.markup_commands, "identifier.core.function.markup"),
+        (_lilypond_builtins.music_functions, "function.builtin"),
+        (music_objects, "variable.builtin"),
+        (_lilypond_builtins.markup_commands, "function.builtin.markup"),
     ]:
         file.write(dedent(f"""\
         (
@@ -68,10 +68,10 @@ with open("queries/highlights-builtins.scm", "w") as file:
         """))
 
     for list_and_selector in [
-        (_lilypond_builtins.grobs, "identifier.core.type.graphical_object"),
-        (_lilypond_builtins.contexts, "identifier.core.type.context"),
-        (_lilypond_builtins.translators, "identifier.core.type.translator"),
-        (_lilypond_builtins.context_properties, "identifier.core.property.context"),
+        (_lilypond_builtins.grobs, "type.builtin.graphical_object"),
+        (_lilypond_builtins.contexts, "type.builtin.context"),
+        (_lilypond_builtins.translators, "type.builtin.translator"),
+        (_lilypond_builtins.context_properties, "property.context"),
     ]:
         file.write(dedent(f"""\
         (
@@ -86,13 +86,13 @@ with open("queries/highlights-builtins.scm", "w") as file:
     file.write(dedent(f"""\
     (
       (
-        (escaped_word) @identifier.core.function
-        (#eq? @identifier.core.function "\\\\tweak")
+        (escaped_word) @function.builtin
+        (#eq? @function.builtin "\\\\tweak")
       )
       .
       (
-        (symbol) @identifier.core.property.graphical_object
-        (#any-of? @identifier.core.property.graphical_object
+        (symbol) @property.graphical_object
+        (#any-of? @property.graphical_object
           {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.grob_properties])}
         )
       )
@@ -100,8 +100,8 @@ with open("queries/highlights-builtins.scm", "w") as file:
 
     (property_expression
       (
-        (symbol) @identifier.core.property.graphical_object
-        (#any-of? @identifier.core.property.graphical_object
+        (symbol) @property.graphical_object
+        (#any-of? @property.graphical_object
           {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.grob_properties])}
         )
       )
@@ -109,13 +109,13 @@ with open("queries/highlights-builtins.scm", "w") as file:
 
     (
       (
-        (escaped_word) @identifier.core.function
-        (#eq? @identifier.core.function "\\\\clef")
+        (escaped_word) @function.builtin
+        (#eq? @function.builtin "\\\\clef")
       )
       .
       (
-        (symbol) @identifier.core.constant.clef
-        (#any-of? @identifier.core.constant.clef
+        (symbol) @constant.builtin.clef
+        (#any-of? @constant.builtin.clef
           {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.clefs])}
         )
       )
@@ -123,15 +123,15 @@ with open("queries/highlights-builtins.scm", "w") as file:
 
     (
       (
-        (escaped_word) @identifier.core.function
-        (#eq? @identifier.core.function "\\\\key")
+        (escaped_word) @function.builtin
+        (#eq? @function.builtin "\\\\key")
       )
       .
       (symbol)
       .
       (
-        (escaped_word) @identifier.core.constant.scale
-        (#any-of? @identifier.core.constant.scale
+        (escaped_word) @constant.builtin.scale
+        (#any-of? @constant.builtin.scale
           {"\n          ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.scales)])}
         )
       )
@@ -139,13 +139,13 @@ with open("queries/highlights-builtins.scm", "w") as file:
 
     (
       (
-        (escaped_word) @identifier.core.function
-        (#eq? @identifier.core.function "\\\\repeat")
+        (escaped_word) @function.builtin
+        (#eq? @function.builtin "\\\\repeat")
       )
       .
       (
-        (symbol) @identifier.core.constant.repeat_type
-        (#any-of? @identifier.core.constant.repeat_type
+        (symbol) @constant.builtin.repeat_type
+        (#any-of? @constant.builtin.repeat_type
           {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.repeat_types])}
         )
       )
@@ -159,8 +159,8 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (expression_block
         (
-          (escaped_word) @identifier.core.constant.unit
-          (#any-of? @identifier.core.constant.unit
+          (escaped_word) @constant.builtin.unit
+          (#any-of? @constant.builtin.unit
             {"\n            ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.units)])}
           )
         )
@@ -185,13 +185,13 @@ with open("queries/highlights-builtins.scm", "w") as file:
 
     (
       (
-        (escaped_word) @identifier.core.function
-        (#eq? @identifier.core.function "\\\\language")
+      (escaped_word) @function.builtin
+        (#eq? @function.builtin "\\\\language")
       )
       .
       (
-        (symbol) @identifier.core.constant.language
-        (#any-of? @identifier.core.constant.language
+        (symbol) @constant.builtin.language
+        (#any-of? @constant.builtin.language
           {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.pitch_language_names])}
         )
       )
@@ -207,16 +207,16 @@ with open("queries/highlights-builtins.scm", "w") as file:
         (assignment_lhs
           [
             (
-              (symbol) @identifier.core.variable
-              (#any-of? @identifier.core.variable
+              (symbol) @variable.builtin
+              (#any-of? @variable.builtin
                 {"\n                ".join(['"' + str + '"' for str in _lilypond_builtins.paper_variables])}
               )
             )
 
             (property_expression
               (
-                (symbol) @identifier.core.variable
-                (#any-of? @identifier.core.variable
+                (symbol) @variable.builtin
+                (#any-of? @variable.builtin
                   {"\n                  ".join(['"' + str + '"' for str in _lilypond_builtins.paper_variables])}
                 )
               )
@@ -234,8 +234,8 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (expression_block
         (
-          (escaped_word) @identifier.core.variable
-          (#any-of? @identifier.core.variable
+          (escaped_word) @variable.builtin
+          (#any-of? @variable.builtin
             {"\n            ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.paper_variables)])}
           )
         )
@@ -250,8 +250,8 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (expression_block
         (assignment_lhs
-          (symbol) @identifier.core.variable
-          (#any-of? @identifier.core.variable
+          (symbol) @constant.builtin
+          (#any-of? @constant.builtin
             {"\n            ".join(['"' + str + '"' for str in _lilypond_builtins.header_variables])}
           )
         )
@@ -274,8 +274,8 @@ with open("queries/highlights-scheme-builtins.scm", "w") as file:
         _scheme_builtins.scheme_builtins.remove(item)
     file.write(dedent(f"""\
     (
-      (scheme_symbol) @identifier.core.function
-      (#any-of? @identifier.core.function
+      (scheme_symbol) @function.builtin
+      (#any-of? @function.builtin
         {"\n        ".join(['"' + str + '"' for str in sorted(_scheme_builtins.scheme_builtins)])}
       )
     )
@@ -284,8 +284,8 @@ with open("queries/highlights-scheme-builtins.scm", "w") as file:
 with open("queries/highlights-scheme-lilypond-builtins.scm", "w") as file:
     file.write(dedent(f"""\
     (
-      (scheme_symbol) @identifier.core.function
-      (#any-of? @identifier.core.function
+      (scheme_symbol) @function.builtin
+      (#any-of? @function.builtin
         {"\n        ".join(['"' + str + '"' for str in _lilypond_builtins.scheme_functions])}
       )
     )

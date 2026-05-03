@@ -1,15 +1,15 @@
 \version "2.24.0"
-% <- processing
+% <- keyword.directive
 %        ^ string.delimiter.left
 %         ^ string
 %               ^ string.delimiter.right
 
 \language english
-% <- identifier.core.function
-%         ^ identifier.core.constant.language
+% <- function.builtin
+%         ^ constant.builtin.language
 
 # (define foo '())
-% <- processing
+% <- keyword.directive
 % ^ punctuation.bracket
 %  ^ keyword
 %             ^ operator
@@ -18,21 +18,21 @@
 %                ^ punctuation.bracket
 
 # (define-markup-command (bar layout properties input-markup) (markup?)
-; <- processing
+; <- keyword.directive
 ; ^ punctuation.bracket
-;  ^ identifier.core.function
+;  ^ function.builtin
 ;                        ^ punctuation.bracket
 ;                                                           ^ punctuation.bracket
 ;                                                             ^ punctuation.bracket
-;                                                              ^ identifier.core.function
+;                                                              ^ function.builtin
 ;                                                                     ^ punctuation.bracket
 
   ( interpret-markup layout properties #{ \markup #input-markup #}))
   % <- punctuation.bracket
-  % ^ identifier.core.function
+  % ^ function.builtin
   %                                    ^ punctuation.bracket
   %                                       ^ keyword
-  %                                               ^ processing
+  %                                               ^ keyword.directive
   %                                                             ^ punctuation.bracket
   %                                                               ^ punctuation.bracket
   %                                                                ^ punctuation.bracket
@@ -43,7 +43,7 @@
 
   \new Staff="foo" {
   % <- keyword
-  %    ^ identifier.core.type.context
+  %    ^ type.builtin.context
   %         ^ operator
   %          ^ string.delimiter.left
   %           ^ string
@@ -51,62 +51,62 @@
   %                ^ punctuation.bracket
 
     \clef mezzosoprano
-    % <- identifier.core.function
-    %     ^ identifier.core.constant.clef
+    % <- function.builtin
+    %     ^ constant.builtin.clef
 
     \key c \phrygian
-    % <- identifier.core.function
-    %      ^ identifier.core.constant.scale
+    % <- function.builtin
+    %      ^ constant.builtin.scale
 
     \repeat unfold 1 { }
-    % <- identifier.core.function
-    %       ^ identifier.core.constant.repeat_type
-    %              ^ value.number
+    % <- function.builtin
+    %       ^ constant.builtin.repeat_type
+    %              ^ number
     %                ^ punctuation.bracket
     %                  ^ punctuation.bracket
 
     < \breve >>> q1*3/2\^
     % <- punctuation.bracket
-    % ^ value.number
+    % ^ constant.builtin
     %        ^ invalid
     %          ^ punctuation.bracket
     %            ^ keyword
-    %             ^ value.number
+    %             ^ number
     %              ^ punctuation
-    %               ^ value.number
-    %                ^ value.number
-    %                 ^ value.number
-    %                  ^ identifier.core.function
+    %               ^ number
+    %                ^ number
+    %                 ^ number
+    %                  ^ function.builtin
 
     << { 1 \< } \\ { 2 \! } >>
     % <- punctuation.bracket
     %  ^ punctuation.bracket
-    %    ^ value.number
-    %      ^ identifier.core.global
+    %    ^ number
+    %      ^ variable.builtin
     %         ^ punctuation.bracket
     %           ^ punctuation.delimiter
     %              ^ punctuation.bracket
-    %                ^ value.number
-    %                  ^ identifier.core.global
+    %                ^ number
+    %                  ^ variable.builtin
     %                     ^ punctuation.bracket
     %                       ^ punctuation.bracket
 
     # (define bar #{
-    % <- processing
+    % <- keyword.directive
     % ^ punctuation.bracket
     %  ^ keyword
     %             ^ punctuation.bracket
     %              ^ punctuation.bracket
       \relative {
-      % <- identifier.core.function
+      % <- function.builtin
       %         ^ punctuation.bracket
         # (make-sequential-music
-        ; <- processing
+        ; <- keyword.directive
         ; ^ punctuation.bracket
-        ;  ^ identifier.core.function
+        ;  ^ function.builtin
           ( map (lambda (%baz) #{ s1 #})
           ; <- punctuation.bracket
-          ; ^ identifier.core.function
+          ; ^ function.builtin
           ;     ^ punctuation.bracket
           ;      ^ keyword
           ;             ^ punctuation.bracket
@@ -114,13 +114,13 @@
           ;                  ^ punctuation.bracket
           ;                    ^ punctuation.bracket
           ;                     ^ punctuation.bracket
-          ;                        ^ value.number
+          ;                        ^ number
           ;                          ^ punctuation.bracket
           ;                            ^ punctuation.bracket
                ( iota 1)))
                % <- punctuation.bracket
-               % ^ identifier.core.function
-               %      ^ value.number
+               % ^ function.builtin
+               %      ^ number
                %       ^ punctuation.bracket
                %        ^ punctuation.bracket
                %         ^ punctuation.bracket
@@ -133,16 +133,16 @@
     % ^ punctuation.bracket
 
     \tweak when ##f
-    % <- identifier.core.function
-    %      ^ identifier.core.property.graphical_object
-    %           ^ processing
-    %            ^ value.boolean
+    % <- function.builtin
+    %      ^ property.graphical_object
+    %           ^ keyword.directive
+    %            ^ boolean
 
     \override NoteHead.labels = ""
     % <- keyword
-    %         ^ identifier.core.type.graphical_object
+    %         ^ type.builtin.graphical_object
     %                 ^ punctuation
-    %                  ^ identifier.core.property.graphical_object
+    %                  ^ property.graphical_object
     %                         ^ operator
     %                           ^ string.delimiter.left
     %                            ^ string.delimiter.right
@@ -168,8 +168,8 @@
 % <- keyword
 %      ^ punctuation.bracket
   systems-per-page = 1
-  % <- identifier.core.variable
+  % <- variable.builtin
   %                ^ operator
-  %                  ^ value.number
+  %                  ^ number
 }
 % <- punctuation.bracket

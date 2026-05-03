@@ -1,6 +1,6 @@
 (
-  (scheme_symbol) @identifier.core.function
-  (#any-of? @identifier.core.function
+  (scheme_symbol) @function.builtin
+  (#any-of? @function.builtin
     "!="
     "*location*"
     "*parser*"

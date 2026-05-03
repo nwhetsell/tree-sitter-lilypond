@@ -39,8 +39,8 @@
   )
 )
 (
-  (escaped_word) @processing
-  (#any-of? @processing
+  (escaped_word) @keyword.directive
+  (#any-of? @keyword.directive
     ; These are handled directly by LilyPond’s lexer.
     "\\include"
     "\\maininput"
@@ -48,20 +48,20 @@
   )
 )
 (
-  (escaped_word) @value.number
-  (#any-of? @value.number
+  (escaped_word) @constant.builtin
+  (#any-of? @constant.builtin
     "\\breve"
     "\\longa"
     "\\maxima"
   )
 )
 (
-  (escaped_word) @identifier.core.function
-  (#eq? @identifier.core.function "\\^")
+  (escaped_word) @function.builtin
+  (#eq? @function.builtin "\\^")
 )
 
 (quoted_identifier
-  "\"" @bracket
+  "\"" @punctuation.bracket
 )
 
 (
@@ -73,11 +73,11 @@
   (fraction)
   (decimal_number)
   (unsigned_integer)
-] @value.number
+] @number
 
-(dynamic) @identifier.core.global
+(dynamic) @variable.builtin
 
-(instrument_string_number) @identifier.core.function
+(instrument_string_number) @function.builtin
 
 (
   (string
@@ -102,4 +102,4 @@
   ">>" @invalid
 )
 
-(embedded_scheme_prefix) @processing
+(embedded_scheme_prefix) @keyword.directive
