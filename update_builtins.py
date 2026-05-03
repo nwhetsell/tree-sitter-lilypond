@@ -1,4 +1,3 @@
-from pygments.regexopt import regex_opt
 import pygments.lexers._lilypond_builtins as _lilypond_builtins
 import pygments.lexers._scheme_builtins as _scheme_builtins
 import re
@@ -52,7 +51,6 @@ for keyword in ["markup", "markuplist", "override", "score"]:
     _lilypond_builtins.markup_commands.remove(keyword)
 
 with open("queries/highlights-builtins.scm", "w") as file:
-    backslash_prefix = r"^\\\\"
     for list_and_selector in [
         (_lilypond_builtins.keywords, "keyword"),
         (_lilypond_builtins.music_functions, "identifier.core.function"),
@@ -62,7 +60,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
         file.write(dedent(f"""\
         (
           (escaped_word) @{list_and_selector[1]}
-          (#match? @{list_and_selector[1]} "{regex_opt(list_and_selector[0], backslash_prefix, "$").replace("\\-", "-")}")
+          (#any-of? @{list_and_selector[1]}
+            {"\n            ".join(['"\\\\' + str + '"' for str in sorted(list_and_selector[0])])}
+          )
         )
 
         """))
@@ -76,7 +76,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
         file.write(dedent(f"""\
         (
           (symbol) @{list_and_selector[1]}
-          (#match? @{list_and_selector[1]} "{regex_opt(list_and_selector[0], "^", "$")}")
+          (#any-of? @{list_and_selector[1]}
+            {"\n            ".join(['"' + str + '"' for str in list_and_selector[0]])}
+          )
         )
 
         """))
@@ -90,14 +92,18 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (
         (symbol) @identifier.core.property.graphical_object
-        (#match? @identifier.core.property.graphical_object "{regex_opt(_lilypond_builtins.grob_properties, "^", "$")}")
+        (#any-of? @identifier.core.property.graphical_object
+          {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.grob_properties])}
+        )
       )
     )
 
     (property_expression
       (
         (symbol) @identifier.core.property.graphical_object
-        (#match? @identifier.core.property.graphical_object "{regex_opt(_lilypond_builtins.grob_properties, "^", "$")}")
+        (#any-of? @identifier.core.property.graphical_object
+          {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.grob_properties])}
+        )
       )
     )
 
@@ -109,7 +115,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (
         (symbol) @identifier.core.constant.clef
-        (#match? @identifier.core.constant.clef "{regex_opt(_lilypond_builtins.clefs, "^", "$")}")
+        (#any-of? @identifier.core.constant.clef
+          {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.clefs])}
+        )
       )
     )
 
@@ -123,7 +131,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (
         (escaped_word) @identifier.core.constant.scale
-        (#match? @identifier.core.constant.scale "{regex_opt(_lilypond_builtins.scales, backslash_prefix, "$")}")
+        (#any-of? @identifier.core.constant.scale
+          {"\n          ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.scales)])}
+        )
       )
     )
 
@@ -135,7 +145,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (
         (symbol) @identifier.core.constant.repeat_type
-        (#match? @identifier.core.constant.repeat_type "{regex_opt(_lilypond_builtins.repeat_types, "^", "$")}")
+        (#any-of? @identifier.core.constant.repeat_type
+          {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.repeat_types])}
+        )
       )
     )
 
@@ -148,7 +160,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       (expression_block
         (
           (escaped_word) @identifier.core.constant.unit
-          (#match? @identifier.core.constant.unit "{regex_opt(_lilypond_builtins.units, backslash_prefix, "$")}")
+          (#any-of? @identifier.core.constant.unit
+            {"\n            ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.units)])}
+          )
         )
       )
     )
@@ -162,7 +176,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       (expression_block
         (
           (symbol) @keyword.operator
-          (#match? @keyword.operator "{regex_opt(_lilypond_builtins.chord_modifiers, "^", "$")}")
+          (#any-of? @keyword.operator
+            {"\n            ".join(['"' + str + '"' for str in _lilypond_builtins.chord_modifiers])}
+          )
         )
       )
     )
@@ -175,7 +191,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       .
       (
         (symbol) @identifier.core.constant.language
-        (#match? @identifier.core.constant.language "{regex_opt(_lilypond_builtins.pitch_language_names, "^", "$")}")
+        (#any-of? @identifier.core.constant.language
+          {"\n          ".join(['"' + str + '"' for str in _lilypond_builtins.pitch_language_names])}
+        )
       )
     )
 
@@ -190,13 +208,17 @@ with open("queries/highlights-builtins.scm", "w") as file:
           [
             (
               (symbol) @identifier.core.variable
-              (#match? @identifier.core.variable "{regex_opt(_lilypond_builtins.paper_variables, "^", "$")}")
+              (#any-of? @identifier.core.variable
+                {"\n                ".join(['"' + str + '"' for str in _lilypond_builtins.paper_variables])}
+              )
             )
 
             (property_expression
               (
                 (symbol) @identifier.core.variable
-                (#match? @identifier.core.variable "{regex_opt(_lilypond_builtins.paper_variables, "^", "$")}")
+                (#any-of? @identifier.core.variable
+                  {"\n                  ".join(['"' + str + '"' for str in _lilypond_builtins.paper_variables])}
+                )
               )
             )
           ]
@@ -213,7 +235,9 @@ with open("queries/highlights-builtins.scm", "w") as file:
       (expression_block
         (
           (escaped_word) @identifier.core.variable
-          (#match? @identifier.core.variable "{regex_opt(_lilypond_builtins.paper_variables, backslash_prefix, "$")}")
+          (#any-of? @identifier.core.variable
+            {"\n            ".join(['"\\\\' + str + '"' for str in sorted(_lilypond_builtins.paper_variables)])}
+          )
         )
       )
     )
@@ -227,37 +251,42 @@ with open("queries/highlights-builtins.scm", "w") as file:
       (expression_block
         (assignment_lhs
           (symbol) @identifier.core.variable
-          (#match? @identifier.core.variable "{regex_opt(_lilypond_builtins.header_variables, "^", "$")}")
+          (#any-of? @identifier.core.variable
+            {"\n            ".join(['"' + str + '"' for str in _lilypond_builtins.header_variables])}
+          )
         )
       )
     )
     """))
 
 with open("queries/highlights-scheme-builtins.scm", "w") as file:
-    regex = re.sub(r"\\(.)", r"\\\\\1", regex_opt(_scheme_builtins.scheme_keywords, "^", "$").replace("\\-", "-"))
     file.write(dedent(f"""\
     (
       (scheme_symbol) @keyword
-      (#match? @keyword "{regex}")
+      (#any-of? @keyword
+        {"\n        ".join(['"' + str + '"' for str in sorted(_scheme_builtins.scheme_keywords)])}
+      )
     )
     """))
 
     # Remove operator-like functions.
     for item in ["*", "+", "-", "/", "<", "<=", "=", ">", ">="]:
         _scheme_builtins.scheme_builtins.remove(item)
-    regex = re.sub(r"\\(.)", r"\\\\\1", regex_opt(_scheme_builtins.scheme_builtins, "^", "$").replace("\\-", "-"))
     file.write(dedent(f"""\
     (
       (scheme_symbol) @identifier.core.function
-      (#match? @identifier.core.function "{regex}")
+      (#any-of? @identifier.core.function
+        {"\n        ".join(['"' + str + '"' for str in sorted(_scheme_builtins.scheme_builtins)])}
+      )
     )
     """))
 
 with open("queries/highlights-scheme-lilypond-builtins.scm", "w") as file:
-    regex = re.sub(r"\\(.)", r"\\\\\1", regex_opt(_lilypond_builtins.scheme_functions, "^", "$").replace("\\-", "-"))
     file.write(dedent(f"""\
     (
       (scheme_symbol) @identifier.core.function
-      (#match? @identifier.core.function "{regex}")
+      (#any-of? @identifier.core.function
+        {"\n        ".join(['"' + str + '"' for str in _lilypond_builtins.scheme_functions])}
+      )
     )
     """))
