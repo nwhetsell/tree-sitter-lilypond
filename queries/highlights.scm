@@ -29,15 +29,6 @@
   .
 )
 
-; This is needed for Panic Nova.
-(
-  (escaped_word) @identifier.variable
-  (#not-any-of? @identifier.variable
-    "\\include"
-    "\\maininput"
-    "\\version"
-  )
-)
 (
   (escaped_word) @keyword.directive
   (#any-of? @keyword.directive
