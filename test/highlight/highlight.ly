@@ -84,7 +84,7 @@
     %    ^ value.number
     %      ^ identifier.core.global
     %         ^ punctuation.bracket
-    %           ^ punctuation.bracket
+    %           ^ punctuation.delimiter
     %              ^ punctuation.bracket
     %                ^ value.number
     %                  ^ identifier.core.global

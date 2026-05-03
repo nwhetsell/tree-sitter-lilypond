@@ -1360,7 +1360,7 @@
 (
   (
     (escaped_word) @identifier.core.function
-    (#match? @identifier.core.function "^\\\\tweak$")
+    (#eq? @identifier.core.function "\\tweak")
   )
   .
   (
@@ -2275,7 +2275,7 @@
 (
   (
     (escaped_word) @identifier.core.function
-    (#match? @identifier.core.function "^\\\\clef$")
+    (#eq? @identifier.core.function "\\clef")
   )
   .
   (
@@ -2319,7 +2319,7 @@
 (
   (
     (escaped_word) @identifier.core.function
-    (#match? @identifier.core.function "^\\\\key$")
+    (#eq? @identifier.core.function "\\key")
   )
   .
   (symbol)
@@ -2343,7 +2343,7 @@
 (
   (
     (escaped_word) @identifier.core.function
-    (#match? @identifier.core.function "^\\\\repeat$")
+    (#eq? @identifier.core.function "\\repeat")
   )
   .
   (
@@ -2361,7 +2361,7 @@
 (
   (
     (escaped_word) @keyword
-    (#match? @keyword "^\\\\paper$")
+    (#eq? @keyword "\\paper")
   )
   .
   (expression_block
@@ -2381,7 +2381,7 @@
 (
   (
     (escaped_word) @keyword
-    (#match? @keyword "^\\\\chordmode$")
+    (#eq? @keyword "\\chordmode")
   )
   .
   (expression_block
@@ -2400,7 +2400,7 @@
 (
   (
     (escaped_word) @identifier.core.function
-    (#match? @identifier.core.function "^\\\\language$")
+    (#eq? @identifier.core.function "\\language")
   )
   .
   (
@@ -2429,7 +2429,7 @@
 (
   (
     (escaped_word) @keyword
-    (#match? @keyword "^\\\\paper$")
+    (#eq? @keyword "\\paper")
   )
   .
   (expression_block
@@ -2564,7 +2564,7 @@
 (
   (
     (escaped_word) @keyword
-    (#match? @keyword "^\\\\paper$")
+    (#eq? @keyword "\\paper")
   )
   .
   (expression_block
@@ -2633,7 +2633,7 @@
 (
   (
     (escaped_word) @keyword
-    (#match? @keyword "^\\\\header$")
+    (#eq? @keyword "\\header")
   )
   .
   (expression_block

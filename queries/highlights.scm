@@ -7,7 +7,7 @@
   .
   (
     (punctuation) @operator
-    (#match? @operator "^=$")
+    (#eq? @operator "=")
   )
 )
 
@@ -16,7 +16,7 @@
   .
   (
     (punctuation) @operator
-    (#match? @operator "^=$")
+    (#eq? @operator "=")
   )
   .
   [(symbol) (string)]
@@ -29,21 +29,35 @@
   .
 )
 
+; This is needed for Panic Nova.
 (
   (escaped_word) @identifier.variable
-  (#not-match? @identifier.variable "^\\\\(?:include|maininput|version)$") ; This is needed for Panic Nova
+  (#not-any-of? @identifier.variable
+    "\\include"
+    "\\maininput"
+    "\\version"
+  )
 )
 (
   (escaped_word) @processing
-  (#match? @processing "^\\\\(?:include|maininput|version)$") ; These are handled directly by LilyPond’s lexer.
+  (#any-of? @processing
+    ; These are handled directly by LilyPond’s lexer.
+    "\\include"
+    "\\maininput"
+    "\\version"
+  )
 )
 (
   (escaped_word) @value.number
-  (#match? @value.number "^\\\\(?:breve|longa|maxima)$")
+  (#any-of? @value.number
+    "\\breve"
+    "\\longa"
+    "\\maxima"
+  )
 )
 (
   (escaped_word) @identifier.core.function
-  (#match? @identifier.core.function "^\\\\\\^$")
+  (#eq? @identifier.core.function "\\^")
 )
 
 (quoted_identifier
@@ -52,7 +66,7 @@
 
 (
   (symbol) @keyword
-  (#match? @keyword "^q$")
+  (#eq? @keyword "q")
 )
 
 [
@@ -78,9 +92,11 @@
 
 [
   "{" "}"
-  "<<" (parallel_music_separator) ">>"
+  "<<" ">>"
   "#{" "#}"
 ] @punctuation.bracket
+
+(parallel_music_separator) @punctuation.delimiter
 
 (chord
   ">>" @invalid

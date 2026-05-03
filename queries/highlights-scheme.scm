@@ -4,7 +4,17 @@
 
 (
   (scheme_symbol) @operator
-  (#match? @operator "^([*+/=<>-]|[<>]=)$")
+  (#any-of? @operator
+    "*"
+    "+"
+    "/"
+    "="
+    "<"
+    ">"
+    "-"
+    "<="
+    ">="
+  )
 )
 
 (
