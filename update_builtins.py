@@ -253,7 +253,7 @@ with open('queries/highlights-scheme-builtins.scm', 'w') as file:
     )
     '''))
 
-with open('queries/highlights-lilypond-builtins.scm', 'w') as file:
+with open('queries/highlights-scheme-lilypond-builtins.scm', 'w') as file:
     regex = re.sub(r'\\(.)', r'\\\\\1', regex_opt(_lilypond_builtins.scheme_functions, '^', '$').replace('\\-', '-'))
     file.write(dedent(f'''\
     (
