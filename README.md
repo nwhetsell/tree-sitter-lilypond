@@ -15,7 +15,7 @@ for folder in lilypond lilypond-scheme; do tree-sitter generate $folder/grammar.
 
 ## Syntax Highlighting
 
-This repository include [syntax highlighting queries](https://tree-sitter.github.io/tree-sitter/3-syntax-highlighting.html#queries)
+This repository includes [syntax highlighting queries](https://tree-sitter.github.io/tree-sitter/3-syntax-highlighting.html#queries)
 that may achieve a basic level of syntax highlighting in many text editors.
 However, text editors vary widely in how they use Tree-sitter for syntax
 highlighting. For example, here are highlight names for Booleans in a few text
