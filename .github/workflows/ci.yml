@@ -25,7 +25,7 @@ jobs:
         test-rust: true
         test-node: true
         test-python: true
-        test-go: true
+        test-go: false # https://github.com/tree-sitter/parser-test-action/issues/33
         test-swift: true
 
     - name: Clone LilyPond regression test files
