@@ -7,7 +7,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-15, ubuntu-latest]
+        os: [
+          macos-15,
+          ubuntu-24.04 # Can’t use ubuntu-latest due to  https://github.com/tree-sitter/parser-test-action/issues/33
+        ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Check out repository
@@ -25,7 +28,7 @@ jobs:
         test-rust: true
         test-node: true
         test-python: true
-        test-go: false # https://github.com/tree-sitter/parser-test-action/issues/33
+        test-go: true
         test-swift: false # https://github.com/tree-sitter/parser-test-action/issues/31
 
     - name: Clone LilyPond regression test files
